@@ -8,14 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-I am a senior student from Tsinghua University, majoring in Information and Computational Science. I am very interested in graphics and artificial intelligence-related knowledge, and I also have an interest in high-performance computing.
+I am a first year PHD student from Tsinghua University, majoring in Computer Science and Artificial Intelligence.. I am very interested in graphics and artificial intelligence-related knowledge.
 
-I am currently studying and working at CSCG Group, under the guidance of Professor [Shimin Hu](https://cg.cs.tsinghua.edu.cn/shimin.htm). In September 2024, I will officially enroll as a PhD student, with a major in Artificial Intelligence.
+I am currently studying and working at CSCG Group, under the guidance of Professor [Shimin Hu](https://cg.cs.tsinghua.edu.cn/shimin.htm).
 
 ## What do I want to do?
 
-I want to work on technologies related to games and virtual character, like vtuber, to bring people a better digital entertainment experience, gradually moving towards the future of the metaverse.
+I want to work on technologies related to games and virtual character, like **vtuber**, to bring people a better digital entertainment experience, gradually moving towards the future of the metaverse.
 
+If you love vtuber research, please contact with me and talk with me!
 
 ## What do I like?
 
