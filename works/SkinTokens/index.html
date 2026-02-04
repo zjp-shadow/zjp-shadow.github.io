@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging">
+  <meta name="keywords" content="Auto-rigging, Skinning Weights, Autoregressive Models, 3D Animation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/avatar.png">
+
+  <style>
+    body {
+      font-size: 1.1rem;
+    }
+    .content p {
+      font-size: 1.1rem;
+    }
+    .title.is-3 {
+      font-size: 2rem;
+    }
+    .is-size-5 {
+      font-size: 1.25rem !important;
+    }
+    
+    /* Video grid styling */
+    .columns.is-multiline video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    
+    .columns.is-multiline .column {
+      padding: 0.5rem;
+    }
+    
+    /* Video comparison styling */
+    .dual-video-compare-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      margin-bottom: 1rem;
+    }
+    
+    .video-comparison-label {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    
+    .video-comparison-wrapper {
+      position: relative;
+    }
+    
+    .video-comparison-wrapper:hover .video-hint {
+      opacity: 1;
+    }
+    
+    .video-hint {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Placeholder styling */
+    .placeholder-box {
+      background-color: #f5f5f5;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 60px 20px;
+      text-align: center;
+      color: #999;
+      margin: 20px 0;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://zjp-shadow.github.io/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://charactergen.github.io">
+            CharacterGen
+          </a>
+          <a class="navbar-item" href="https://zjp-shadow.github.io/works/UniRig/">
+            UniRig
+          </a>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="cartoon-font">
+                <p><span class="title-text">SkinTokens</span>: A Learned Compact Representation<br> for Unified Autoregressive Rigging</p>
+            </h1>
+            </span>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <span class="author-block">
+                  <a href="https://zjp-shadow.github.io/">Jia-Peng Zhang</a><sup>1</sup>,</span>
+                <a href="https://czpcf.github.io/">Cheng-Feng Pu</a><sup>1</sup>,</span>
+              <a href="https://menghaoguo.github.io/">Meng-Hao Guo</a><sup>1</sup>,</span>
+              <a href="https://yanpei.me/">Yan-Pei Cao</a><sup>2</sup>,</span>
+              <a href="https://cg.cs.tsinghua.edu.cn/shimin.htm">Shi-Min Hu</a><sup>1†</sup></span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>VAST</span>
+              <p></p>
+              <span class="author-block"><sup>†</sup>Corresponding Author</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-widescreen">
+      <span class="teaser">
+        <video poster="./static/images/teaser.png" id="teaser" controls="" muted="" loop="" height="100%">
+          <source src="./static/videos/show.mp4" type="video/mp4">
+        </video>
+        <strong>Automated rigging with <span class="title-text">TokenRig</span>.</strong> We present TokenRig, a unified generative framework that produces high-quality rigs for diverse 3D assets. By leveraging SkinTokens, i.e., our novel, discrete representation for skinning weights, our method robustly generates high-fidelity skeletons and precise skinning maps (visualized as heatmaps) for complex, real-world geometries, ranging from stylized anime characters to quadrupeds and fantasy creatures.
+        <p> </p>
+      </span>
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The rapid proliferation of generative 3D models has created a critical bottleneck in animation pipelines: rigging. Existing automated methods are fundamentally limited by their approach to skinning, treating it as an ill-posed, high-dimensional regression task that is inefficient to optimize and is typically decoupled from skeleton generation. We posit this is a representation problem and introduce <span class="title-text">SkinTokens</span>: a learned, compact, and discrete representation for skinning weights. By leveraging an FSQ-CVAE to capture the intrinsic sparsity of skinning, we reframe the task from continuous regression to a more tractable token sequence prediction problem.
+              <br><br>
+              This representation enables <span class="title-text">TokenRig</span>, a unified autoregressive framework that models the entire rig as a single sequence of skeletal parameters and SkinTokens, learning the complicated dependencies between skeletons and skin deformations. The unified model is then amenable to a reinforcement learning stage, where tailored geometric and semantic rewards improve generalization to complex, out-of-distribution assets.
+              <br><br>
+              Quantitatively, the SkinTokens representation leads to a <strong>98%–133%</strong> improvement in skinning accuracy over state-of-the-art methods, while the full TokenRig framework, refined with RL, enhances bone prediction by <strong>17%–22%</strong>. Our work presents a unified, generative approach to rigging that yields higher fidelity and robustness, offering a scalable solution to a long-standing challenge in 3D content creation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Pipeline Figure -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <figure class="image">
+              <img src="./static/images/pipeline.png" alt="Pipeline overview">
+            </figure>
+            <p class="has-text-centered" style="margin-top: 1rem;">
+              <strong>Overview of the TokenRig Framework.</strong> Our method consists of three key stages:
+              <strong>(1) Learning SkinTokens:</strong> We first train a FSQ-CVAE to compress sparse skinning weights into a compact, discrete representation. Mesh geometry and skinning weights are processed by VecSet encoders, and the resulting features are discretized into SkinTokens via Finite Scalar Quantization (FSQ). We employ nested dropout and importance sampling to ensure robust reconstruction of active deformation regions.
+              <strong>(2) Unified Autoregressive Modeling:</strong> We formulate rigging as a sequence generation task. A Transformer generates a single, unified sequence comprising the complete skeleton followed by the learned SkinTokens, conditioned on global shape embeddings to capture structural dependencies.
+              <strong>(3) RL Refinement via GRPO:</strong> To improve generalization to in-the-wild assets, we fine-tune the model using Group Relative Policy Optimization (GRPO). We introduce four specific rewards: Volumetric Joint Coverage, Bone-Mesh Containment, Skinning Coverage and Sparsity, and Deformation Smoothness.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Contributions -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Key Contributions</h2>
+          <div class="content has-text-justified">
+            <ul>
+              <li><strong>A learned discrete representation for skinning weights</strong>, <em>SkinTokens</em>, that transforms skinning from a high-dimensional regression task into a compact sequence prediction problem.</li>
+              <li><strong>A unified autoregressive framework</strong>, <em>TokenRig</em>, that jointly models skeleton generation and skinning, capturing their mutual dependencies for higher-fidelity results.</li>
+              <li><strong>A reinforcement learning framework for rig refinement</strong>, with novel reward functions designed to improve the generalization and robustness of the generated rigs on out-of-distribution 3D models.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+
+          <!-- Skeleton Comparison -->
+          <h3 class="title is-4" style="margin-top: 2rem;">Skeleton Generation Comparison</h3>
+          <div class="content has-text-justified">
+            <figure class="image">
+              <img src="./static/images/compare_rigging.png" alt="Skeleton generation comparison">
+            </figure>
+            <p class="has-text-centered" style="margin-top: 1rem;">
+              <strong>Qualitative Comparison of Skeleton Generation.</strong> We compare TokenRig (Ours) against state-of-the-art baselines. While baseline methods exhibit partial structures, missing details, or redundant joints, our method synthesizes structurally coherent and semantically faithful skeletons across diverse character types.
+            </p>
+          </div>
+
+          <!-- Skinning Comparison -->
+          <h3 class="title is-4" style="margin-top: 2rem;">Skinning Prediction Comparison</h3>
+          <div class="content has-text-justified">
+            <figure class="image">
+              <img src="./static/images/compare_skin.png" alt="Skinning prediction comparison">
+            </figure>
+            <p class="has-text-centered" style="margin-top: 1rem;">
+              <strong>Qualitative Comparison of Skinning Prediction.</strong> We visualize predicted skinning weights and the corresponding average L1 error maps. Baseline methods often suffer from "bleeding" artifacts, where weights spill onto unconnected mesh parts. TokenRig (Ours) produces clean, locally coherent influence maps that closely match the Ground Truth, particularly in fine-grained regions like fingers.
+            </p>
+          </div>
+
+          <!-- GRPO Comparison -->
+          <h3 class="title is-4" style="margin-top: 2rem;">Impact of Reinforcement Learning</h3>
+          <div class="content has-text-justified">
+            <figure class="image" style="max-width: 70%; margin: 0 auto;">
+              <img src="./static/images/compare_grpo.png" alt="GRPO comparison">
+            </figure>
+          </div>
+
+          <!-- Wild Results -->
+          <h3 class="title is-4" style="margin-top: 2rem;">Diverse Generation Results</h3>
+          <div class="content has-text-justified">
+            <figure class="image">
+              <img src="./static/images/wild.png" alt="Diverse generation results">
+            </figure>
+            <p class="has-text-centered" style="margin-top: 1rem;">
+              <strong>Diverse Generation Results.</strong> We demonstrate the generalization capacity of TokenRig on a wide range of inputs, including unseen test-set samples and complex in-the-wild assets. The model robustly synthesizes fully articulated skeletons and accurate skinning weights.
+            </p>
+          </div>
+
+          <!-- Quantitative Results Tables -->
+          <h3 class="title is-4" style="margin-top: 2rem;">Quantitative Results</h3>
+          <div class="content">
+            <p><strong>Skeleton Generation (Chamfer Distance, lower is better):</strong></p>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th colspan="3" class="has-text-centered">ModelsResource</th>
+                    <th colspan="3" class="has-text-centered">Articulation 2.0</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th>J2J↓</th>
+                    <th>J2B↓</th>
+                    <th>B2B↓</th>
+                    <th>J2J↓</th>
+                    <th>J2B↓</th>
+                    <th>B2B↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RigNet</td>
+                    <td>3.901</td>
+                    <td>2.412</td>
+                    <td>2.213</td>
+                    <td>7.376</td>
+                    <td>5.841</td>
+                    <td>4.802</td>
+                  </tr>
+                  <tr>
+                    <td>MagicArticulate</td>
+                    <td>3.024</td>
+                    <td>2.260</td>
+                    <td>1.915</td>
+                    <td>4.003</td>
+                    <td>3.026</td>
+                    <td>2.586</td>
+                  </tr>
+                  <tr>
+                    <td>Puppeteer</td>
+                    <td>3.841</td>
+                    <td>2.881</td>
+                    <td>2.475</td>
+                    <td>3.033</td>
+                    <td>2.300</td>
+                    <td>1.923</td>
+                  </tr>
+                  <tr>
+                    <td>UniRig</td>
+                    <td>3.390</td>
+                    <td>2.592</td>
+                    <td>1.890</td>
+                    <td>3.115</td>
+                    <td>2.211</td>
+                    <td>1.926</td>
+                  </tr>
+                  <tr style="background-color: #e8f5e9;">
+                    <td><strong>TokenRig (Ours, w/ GRPO)</strong></td>
+                    <td><strong>2.893</strong></td>
+                    <td><strong>2.012</strong></td>
+                    <td><strong>1.547</strong></td>
+                    <td><strong>2.485</strong></td>
+                    <td><strong>1.599</strong></td>
+                    <td><strong>1.463</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p style="margin-top: 2rem;"><strong>Skinning Prediction (lower L1/Motion is better, higher Precision/Recall is better):</strong></p>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th colspan="5" class="has-text-centered">ModelsResource</th>
+                    <th colspan="5" class="has-text-centered">Articulation 2.0</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th>L1↓</th>
+                    <th>Var.↓</th>
+                    <th>Prec.↑</th>
+                    <th>Rec.↑</th>
+                    <th>Motion↓</th>
+                    <th>L1↓</th>
+                    <th>Var.↓</th>
+                    <th>Prec.↑</th>
+                    <th>Rec.↑</th>
+                    <th>Motion↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RigNet</td>
+                    <td>0.057</td>
+                    <td>0.046</td>
+                    <td>62.4</td>
+                    <td>59.9</td>
+                    <td>0.079</td>
+                    <td>0.043</td>
+                    <td>0.040</td>
+                    <td>67.8</td>
+                    <td>54.6</td>
+                    <td>0.092</td>
+                  </tr>
+                  <tr>
+                    <td>Puppeteer</td>
+                    <td>0.032</td>
+                    <td>0.017</td>
+                    <td>64.4</td>
+                    <td>87.2</td>
+                    <td>0.028</td>
+                    <td>0.028</td>
+                    <td>0.014</td>
+                    <td>76.7</td>
+                    <td>75.1</td>
+                    <td>0.031</td>
+                  </tr>
+                  <tr>
+                    <td>UniRig</td>
+                    <td>0.038</td>
+                    <td>0.021</td>
+                    <td>65.8</td>
+                    <td>86.7</td>
+                    <td>0.031</td>
+                    <td>0.030</td>
+                    <td>0.017</td>
+                    <td>72.6</td>
+                    <td>73.5</td>
+                    <td>0.042</td>
+                  </tr>
+                  <tr style="background-color: #e8f5e9;">
+                    <td><strong>TokenRig (Ours)</strong></td>
+                    <td><strong>0.016</strong></td>
+                    <td><strong>0.007</strong></td>
+                    <td><strong>79.2</strong></td>
+                    <td><strong>89.1</strong></td>
+                    <td><strong>0.016</strong></td>
+                    <td><strong>0.015</strong></td>
+                    <td><strong>0.006</strong></td>
+                    <td><strong>79.0</strong></td>
+                    <td><strong>89.2</strong></td>
+                    <td><strong>0.021</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Acknowledgements</h2>
+          Thanks very much to many friends for their unselfish help with our work.
+        </div>
+      </div>
+
+
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="#" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              We develop this website with <a href="https://github.com/nerfies/nerfies.github.io">source code of nerfies
+                page</a>.
+              Thanks for their open source contributions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
