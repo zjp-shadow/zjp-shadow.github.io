@@ -29,8 +29,8 @@ Built with Jekyll on top of the [AcademicPages](https://github.com/academicpages
 ## Updating the CV
 
 1. Edit `_data/cv/en.yml` and `_data/cv/zh.yml` (keep both in sync).
-2. If the Chinese text gained new characters, re-subset the fallback font `assets/fonts/noto-sans-sc-cv.woff2` from Noto Sans SC (`pyftsubset` with the characters of `/cv/` and `/cv/zh/`); readers with PingFang / YaHei never download it.
-3. Regenerate the PDFs with the site served locally: `node scripts/cv-pdf.js` (needs Playwright). Pass `--font-css` with `@font-face` rules for static TrueType Inter / Noto Sans SC to get much smaller PDFs, and `--phone "..." <out-dir>` for a private copy with a phone number (do not commit that one).
+2. Fonts live in `assets/fonts/cv/`: subsets of Fontin SmallCaps (headings), TeX Gyre Termes (text), Latin Modern Mono (links), Noto Serif SC (Chinese) and a few Font Awesome icons, converted to TrueType outlines so Chromium embeds them compactly in PDFs. If the Chinese text gains new characters, re-subset `serif-sc-400/700.woff2` from Noto Serif SC (static instances at weights 400 and 700, `pyftsubset --text-file=...`).
+3. Regenerate the PDFs with the site served locally: `node scripts/cv-pdf.js` (needs Playwright). `--phone "..." <out-dir>` makes a private copy with a phone number (do not commit that one).
 
 ## Run locally
 

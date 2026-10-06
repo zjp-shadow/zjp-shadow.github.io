@@ -1,8 +1,8 @@
 # English CV, rendered by _layouts/cv.html at /cv/ (PDF: /files/cv/Jiapeng_Zhang_CV_EN.pdf).
-# Keep this file and zh.yml in sync. `**...**` is Markdown bold; "Jiapeng Zhang" is bolded in author lists.
+# Keep this file and zh.yml in sync. Text fields accept Markdown (`**bold**`, `*italic*`);
+# "Jiapeng Zhang" is bolded in author lists. Links are shown without "https://".
 name: "Jiapeng Zhang"
 name_alt: "张嘉鹏"
-headline: "Ph.D. Student · Department of Computer Science and Technology, Tsinghua University"
 contact:
   - { icon: "fas fa-envelope", text: "jiapengzhang@mails.tsinghua.edu.cn", url: "mailto:jiapengzhang@mails.tsinghua.edu.cn" }
   - { icon: "fas fa-globe", text: "zjp-shadow.github.io", url: "https://zjp-shadow.github.io" }
@@ -12,103 +12,95 @@ contact:
 labels:
   switch: "中文"
   pdf: "Download PDF"
-  updated: "Last updated"
   stars: "Stars"
 
 sections:
   - title: "Education"
+    icon: "fas fa-graduation-cap"
     entries:
       - org: "Tsinghua University"
         place: "Beijing, China"
         date: "Sep. 2024 – Present"
-        role: "Ph.D. Student, Department of Computer Science and Technology"
+        role: "*Ph.D. Student* in Department of Computer Science and Technology"
         bullets:
-          - "**GPA:** 3.95 &nbsp;·&nbsp; **Rank:** 27/158"
+          - "**GPA:** 3.95 &emsp; **Rank:** 27/158"
           - "**Advisor:** Prof. Shi-Min Hu (Institute of Human-Computer Interaction and Media Integration)"
           - "**Research Focus:** 3D Generation, Animation, Graphics Simulation & Embodied AI, and AI Infra."
       - org: "Tsinghua University"
         place: "Beijing, China"
         date: "Sep. 2020 – Jul. 2024"
-        role: "B.S. in Information and Computing Science, Zhili College"
+        role: "*B.S.* in Information and Computing Science, Zhili College"
         bullets:
           - "**Rank:** 21/30"
 
   - title: "Selected Publications"
+    icon: "fas fa-book"
     pubs:
       - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
         authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
-        venue: "ACM Transactions on Graphics (TOG), 2026"
-        status: "Accepted with Minor Revisions"
-        links:
-          - { name: "Project", url: "https://zjp-shadow.github.io/works/SkinTokens/" }
-          - { name: "arXiv", url: "https://arxiv.org/abs/2602.04805" }
-          - { name: "Code", url: "https://github.com/VAST-AI-Research/SkinTokens" }
-        desc: "Introduced SkinTokens, a learned discrete representation of skinning weights. By framing skinning as a sequence prediction task, the unified TokenRig framework jointly models skeletons and skin deformations, achieving substantial improvements on rigorous out-of-distribution geometry evaluations."
+        venue: "*ACM Transactions on Graphics (TOG)*, 2026, ***Accepted with Minor Revisions***"
+        url: "https://zjp-shadow.github.io/works/SkinTokens/"
+        desc: "Introduced *SkinTokens*, a learned discrete representation for skinning weights. By framing skinning as a sequence prediction task, the unified *TokenRig* framework jointly models skeletons and skin deformations, achieving substantial improvements in rigorous out-of-distribution geometry evaluations."
       - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
         authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
-        venue: "ACM Transactions on Graphics (TOG), SIGGRAPH 2025"
-        links:
-          - { name: "Project", url: "https://zjp-shadow.github.io/works/UniRig/" }
-          - { name: "arXiv", url: "https://arxiv.org/abs/2504.12451" }
-          - { name: "Code", url: "https://github.com/VAST-AI-Research/UniRig" }
-        desc: "Proposed UniRig, a unified framework for automatic skeletal rigging built on a large autoregressive model and a novel Skeleton Tree Tokenization. Trained on Rig-XL, a new large-scale dataset, it efficiently generates topologically valid skeletons and far outperforms existing state-of-the-art tools across diverse models."
+        venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2025***)"
+        url: "https://zjp-shadow.github.io/works/UniRig/"
+        desc: "Proposed UniRig, a unified framework for automated skeletal rigging leveraging large autoregressive models and a novel *Skeleton Tree Tokenization* method. Trained on *Rig-XL* (a new large-scale dataset), it efficiently generates topologically valid structures, far outperforming existing state-of-the-art tools across diverse generic models."
       - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
         authors: "Haoyang Peng, Jiapeng Zhang, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
-        venue: "ACM Transactions on Graphics (TOG), SIGGRAPH 2024, 43(4): 1–13"
-        links:
-          - { name: "Project", url: "https://charactergen.github.io/" }
-          - { name: "arXiv", url: "https://arxiv.org/abs/2402.17214" }
-          - { name: "Code", url: "https://github.com/zjp-shadow/CharacterGen" }
-        desc: "Presented an efficient framework that lifts a single image into a pose-canonicalized 3D character mesh. It combines an image-conditioned multi-view diffusion model for pose calibration with a transformer-based sparse-view reconstruction network, producing geometrically and texturally robust results ready for animation."
+        venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2024***), 43(4): 1–13, 2024"
+        url: "https://charactergen.github.io/"
+        desc: "Presented a highly efficient framework for lifting single images into pose-unified 3D character meshes. It utilizes an image-conditioned multi-view diffusion model for pose calibration and a transformer-based sparse-view network, producing geometrically and texturally robust outputs ready for animation."
       - title: "Transferring the Intelligence of VLMs to Robotic Control"
         authors: "Menghao Guo, Zhehan Mo, Jiajun Wang, Yi Zhang, Kejin Wang, Yixuan Deng, Jiapeng Zhang, Yongming Rao, Shi-Min Hu"
-        venue: "arXiv preprint arXiv:2609.22966, 2026"
-        links:
-          - { name: "Project", url: "https://robodawn.top/" }
-          - { name: "arXiv", url: "https://arxiv.org/abs/2609.22966" }
-        desc: "Introduced RoboDawn, a human-intuitive interface that lets an agentic VLM control robots in a closed loop through discrete translation, rotation and gripper commands, grounded by a few in-context demonstrations. Without task-specific robot training it reaches state-of-the-art success rates on RoboTwin 2.0 C2R and RoboDojo, and transfers to a real Franka arm."
+        venue: "*arXiv preprint arXiv:2609.22966*, 2026"
+        url: "https://robodawn.top/"
+        desc: "Introduced *RoboDawn*, a human-intuitive interface that lets an agentic VLM control robots in a closed loop through discrete translation, rotation and gripper commands, grounded by a few in-context demonstrations. Without task-specific robot training it achieves state-of-the-art success rates on RoboTwin 2.0 C2R and RoboDojo, and transfers to a real Franka arm."
 
   - title: "Open Source Projects"
+    icon: "fab fa-github"
     entries:
       - org: "UniRig & SkinTokens"
         links:
-          - { name: "UniRig", url: "https://github.com/VAST-AI-Research/UniRig" }
-          - { name: "SkinTokens", url: "https://github.com/VAST-AI-Research/SkinTokens" }
-        stars: "2,200+"
+          - { text: "github.com/VAST-AI-Research/UniRig", url: "https://github.com/VAST-AI-Research/UniRig" }
+          - { text: "SkinTokens", url: "https://github.com/VAST-AI-Research/SkinTokens" }
+        date: "2200+ Stars"
         role: "Project Maintainer & Core Contributor"
         bullets:
-          - "Maintain the official open-source implementations of UniRig (SIGGRAPH 2025, 1.8k+ stars) and SkinTokens (TOG 2026, 450+ stars), releasing pre-trained skeleton and skinning models that rig meshes of every genre, from humanoids to fictional creatures and inanimate objects."
-          - "Released the curated Rig-XL dataset and the unified TokenRig pipeline that predicts skeletons and skinning weights in a single autoregressive model, scaling automatic rigging for the 3D community."
+          - "Maintain the official open-source implementations of UniRig (SIGGRAPH 2025, 1.8k+ stars) and SkinTokens (TOG 2026, 450+ stars), distributing unified pre-trained skeleton and skinning models that rig multi-genre meshes, from functional humans to fictional inorganic artifacts."
+          - "Released the curated *Rig-XL* dataset and the unified *TokenRig* pipeline that predicts skeletons and skinning weights in a single autoregressive model, enriching the broader 3D automation community."
       - org: "CharacterGen"
         links:
-          - { name: "GitHub", url: "https://github.com/zjp-shadow/CharacterGen" }
-        stars: "830+"
+          - { text: "github.com/zjp-shadow/CharacterGen", url: "https://github.com/zjp-shadow/CharacterGen" }
+        date: "830+ Stars"
         role: "Project Maintainer & Core Contributor"
         bullets:
-          - "Designed and maintained the rendering and inference tools behind single-image 3D character lifting, which resolves pose ambiguity through canonical A-pose generation."
-          - "Open-sourced multi-view diffusion synthesis and texture back-projection, widely used by 3D anime avatar creators."
+          - "Designed and actively maintained the rendering and generation inference tools driving single-image 3D lifting, resolving pose ambiguity with canonical “A-pose” generation."
+          - "Open-sourced multi-view diffusion synthesis and detailed texture back-projection, widely adopted by 3D anime avatar creators."
       - org: "Tsinghua Jittor Framework"
         links:
-          - { name: "Jittor", url: "https://github.com/Jittor/Jittor" }
-          - { name: "JittorInfer", url: "https://github.com/Jittor/JittorInfer" }
-        stars: "3,200+"
-        role: "Core Member & Head of the JittorInfer Framework"
+          - { text: "github.com/Jittor/Jittor", url: "https://github.com/Jittor/Jittor" }
+          - { text: "JittorInfer", url: "https://github.com/Jittor/JittorInfer" }
+        date: "3200+ Stars"
+        role: "Core Member & Head of JittorInfer Framework"
         bullets:
-          - "Engineered JittorInfer, a high-performance C++ LLM inference framework adapted to domestic AI hardware such as Huawei Ascend NPUs."
-          - "Led system-level optimizations including multi-stage operator fusion and end-to-end resource scheduling, achieving large throughput gains over Ascend-vLLM when serving frontier models such as DeepSeek."
+          - "Engineered **JittorInfer**, a high-performance C++ LLM inference framework adapted to domestic AI hardware such as Huawei Ascend processors."
+          - "Spearheaded system-level computing abstractions, including CPU multi-stage operator fusion and end-to-end resource execution scheduling, which brought large throughput improvements when serving frontier models like the **DeepSeek** lineup compared to Ascend-vLLM."
 
   - title: "Honors and Awards"
+    icon: "fas fa-trophy"
     awards:
-      - { name: "Rising Star Pioneer Award, Huawei Kunpeng & Ascend Developer Conference (KADC)", date: "2026" }
-      - { name: "Comprehensive Scholarship for Ph.D. Students, Tsinghua University", date: "2025" }
-      - { name: "Silver Medal, National Olympiad in Informatics (NOI)", date: "2019" }
-      - { name: "Gold Medal, China Team Selection for Informatics (CTS)", date: "2019" }
+      - { name: "*Rising Star Pioneer Award*, Huawei Kunpeng & Ascend Developer Conference (KADC)", date: "2026" }
+      - { name: "*Comprehensive Scholarship for Ph.D. Students*, Tsinghua University", date: "2025" }
+      - { name: "*Silver Medal*, National Olympiad in Informatics (NOI)", date: "2019" }
+      - { name: "*Gold Medal*, China Team Selection for Informatics (CTS)", date: "2019" }
 
   - title: "Internship Experience"
+    icon: "fas fa-briefcase"
     entries:
       - org: "Tencent Hunyuan"
         date: "2026"
-        role: "Research Intern, Video Generation · Tsinghua Summer Social Practice"
+        role: "Research Intern, Video Generation (Tsinghua Summer Social Practice)"
         bullets:
           - "Studied how the metrics of video VAEs relate to the generation performance of flow-based video models."
       - org: "Tencent"
@@ -120,4 +112,4 @@ sections:
         date: "2023"
         role: "Software Engineering Intern"
         bullets:
-          - "Developed system-level optimizations for sparse matrix multiplication targeting the SME (Scalable Matrix Extension) instruction set on Kunpeng chips."
+          - "Developed and implemented system-level optimizations for sparse matrix multiplication targeting the SME (Scalable Matrix Extension) instruction set on Kunpeng chips."

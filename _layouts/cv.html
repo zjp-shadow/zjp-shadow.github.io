@@ -3,8 +3,8 @@ layout: compress
 ---
 {% comment %}
   Bilingual CV. Content lives in _data/cv/<page.cv>.yml; the page sets `cv` (en|zh), `lang`,
-  `alt_url` (the other language) and `pdf`. The same markup prints to A4 (see assets/css/cv.css),
-  which is how the PDFs in files/cv/ are made (scripts/cv-pdf.js).
+  `alt_url` (the other language) and `pdf`. The sheet is typeset like a LaTeX résumé and prints to
+  A4 (see assets/css/cv.css), which is how the PDFs in files/cv/ are made (scripts/cv-pdf.js).
 {% endcomment %}
 {% include base_path %}
 {% assign cv = site.data.cv[page.cv] %}
@@ -28,29 +28,26 @@ layout: compress
 
       <article class="cv-sheet">
         <header class="cv-head">
-          <h1 class="cv-name">{{ cv.name }} <span class="cv-name__alt" lang="{% if page.cv == 'zh' %}en{% else %}zh-CN{% endif %}">{{ cv.name_alt }}</span></h1>
-          <p class="cv-headline">{{ cv.headline }}</p>
+          <h1 class="cv-name">{{ cv.name }}<span class="cv-name__alt" lang="{% if page.cv == 'zh' %}en{% else %}zh-CN{% endif %}">{{ cv.name_alt }}</span></h1>
           <ul class="cv-contact">
-            {% for c in cv.contact %}
-              <li><i class="{{ c.icon }} fa-fw" aria-hidden="true"></i><a href="{{ c.url }}">{{ c.text }}</a></li>
-            {% endfor %}
+            {% for c in cv.contact %}<li><a href="{{ c.url }}"><i class="cvi {{ c.icon }}" aria-hidden="true"></i>{{ c.text }}</a></li>{% endfor %}
           </ul>
         </header>
 
         {% for s in cv.sections %}
         <section class="cv-section">
-          <h2 class="cv-section__title">{{ s.title }}</h2>
+          <h2 class="cv-section__title">{% if s.icon %}<i class="cvi {{ s.icon }}" aria-hidden="true"></i>{% endif %}{{ s.title }}</h2>
 
           {% for e in s.entries %}
           <div class="cv-entry">
-            <div class="cv-entry__head">
+            <div class="cv-row">
               <h3 class="cv-entry__org">
-                {{ e.org }}{% if e.place %}<span class="cv-entry__place">{% if page.cv == 'zh' %} · {% else %}, {% endif %}{{ e.place }}</span>{% endif %}
-                {% if e.links %}<span class="cv-entry__links">{% for l in e.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</span>{% endif %}
+                <strong>{{ e.org }}</strong>{% if e.place %}{% if page.cv == 'zh' %}，{% else %}, {% endif %}{{ e.place }}{% endif %}
+                {% if e.links %}<span class="cv-url">({% for l in e.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %})</span>{% endif %}
               </h3>
-              {% if e.stars %}<span class="cv-entry__date cv-stars">{{ e.stars }} {{ cv.labels.stars }}</span>{% elsif e.date %}<span class="cv-entry__date">{{ e.date }}</span>{% endif %}
+              {% if e.date %}<span class="cv-date">{{ e.date }}</span>{% endif %}
             </div>
-            {% if e.role %}<p class="cv-entry__role">{{ e.role }}</p>{% endif %}
+            {% if e.role %}<p class="cv-entry__role">{{ e.role | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
             {% if e.bullets %}
             <ul class="cv-bullets">
               {% for b in e.bullets %}<li>{{ b | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
@@ -60,32 +57,27 @@ layout: compress
           {% endfor %}
 
           {% if s.pubs %}
-          <ol class="cv-pubs">
+          <ul class="cv-bullets cv-pubs">
             {% for p in s.pubs %}
             <li class="cv-pub">
-              <h3 class="cv-pub__title">{{ p.title }}</h3>
-              <p class="cv-pub__authors">{{ p.authors | replace: 'Jiapeng Zhang', '<strong>Jiapeng Zhang</strong>' }}</p>
-              <p class="cv-pub__venue">
-                <em>{{ p.venue }}</em>{% if p.status %} <span class="cv-tag">{{ p.status }}</span>{% endif %}
-                <span class="cv-entry__links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</span>
-              </p>
-              <p class="cv-pub__desc">{{ p.desc }}</p>
+              <span class="cv-pub__line"><strong>{{ p.title }}</strong></span>
+              <span class="cv-pub__line">{% assign names = p.authors | split: ', ' %}{% for n in names %}<span class="cv-author">{% if n == 'Jiapeng Zhang' %}<strong>{{ n }}</strong>{% else %}{{ n }}{% endif %}{% unless forloop.last %},{% endunless %}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</span>
+              <span class="cv-pub__line">{{ p.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if p.url %} <span class="cv-url">(<a href="{{ p.url }}">{{ p.url | remove_first: 'https://' | remove_first: 'http://' }}</a>)</span>{% endif %}</span>
+              <span class="cv-pub__desc">{{ p.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
             </li>
             {% endfor %}
-          </ol>
+          </ul>
           {% endif %}
 
           {% if s.awards %}
           <ul class="cv-awards">
             {% for a in s.awards %}
-            <li><span>{{ a.name }}</span><span class="cv-entry__date">{{ a.date }}</span></li>
+            <li class="cv-row"><span>{{ a.name | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span><span class="cv-date">{{ a.date }}</span></li>
             {% endfor %}
           </ul>
           {% endif %}
         </section>
         {% endfor %}
-
-        <p class="cv-updated">{{ cv.labels.updated }} {{ site.time | date: '%Y.%m' }}</p>
       </article>
     </main>
 

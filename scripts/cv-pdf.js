@@ -5,8 +5,7 @@
 //
 // Defaults: base-url http://localhost:4000, out-dir files/cv. `--phone` adds a phone number to the
 // contact line, for a private copy that is not published (write it outside the repo).
-// `--font-css` injects a stylesheet before printing, e.g. @font-face rules for static (non-variable)
-// fonts: Chromium embeds variable fonts as bulky Type 3 glyphs, static TrueType fonts make the PDF several times smaller.
+// `--font-css` injects an extra stylesheet before printing (e.g. to try other fonts).
 const path = require('path');
 const { chromium } = require('playwright');
 
@@ -33,8 +32,14 @@ const pages = [
     if (phone) {
       await page.evaluate((tel) => {
         const li = document.createElement('li');
-        li.textContent = tel;
-        document.querySelector('.cv-contact').insertBefore(li, document.querySelector('.cv-contact li:nth-child(2)'));
+        li.innerHTML = '<i class="cvi fas fa-phone" aria-hidden="true"></i>';
+        li.appendChild(document.createTextNode(tel));
+        const list = document.querySelector('.cv-contact');
+        const rest = list.querySelector('li:nth-child(2)');
+        list.insertBefore(li, rest);
+        // Five items do not fit on one line: break after email · phone.
+        rest.classList.add('cv-contact__wrap');
+        list.insertBefore(document.createElement('br'), rest);
       }, phone);
     }
     await page.emulateMedia({ media: 'print', colorScheme: 'light' });
