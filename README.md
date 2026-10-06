@@ -8,13 +8,21 @@ Built with Jekyll on top of the [AcademicPages](https://github.com/academicpages
 
 | Path | Content |
 |---|---|
-| `_pages/about.md` | Homepage (bio, news, selected publications) |
+| `_pages/about.md` | Homepage (hero, about, news, publications, interests); uses `_layouts/home.html` |
 | `_data/news.yml` | News items shown on the homepage |
-| `_data/publications.yml` | Publication cards shown on the homepage |
-| `_publications/` | One page per paper, listed at `/publications/` |
-| `_posts/` | Blog posts |
+| `_data/publications.yml` | Publication cards (homepage + `/publications/`), linked to pages by `key` |
+| `_publications/` | One page per paper (abstract + BibTeX); uses `_layouts/publication.html` |
+| `_posts/` | Blog posts; use `_layouts/post.html`, listed by `_pages/year-archive.html` |
 | `works/` | Standalone project pages (UniRig, SkinTokens) |
-| `images/publication/` | Paper teaser images and thumbnails |
+| `images/publication/` | Paper teasers (`<key>.jpg`) and card thumbnails (`<key>-thumb.jpg`) |
+| `_sass/_theme.scss` | Site theme: colors (light/dark CSS variables), typography, components |
+| `assets/js/site.js` | Dark-mode toggle, BibTeX copy, scroll reveal, back-to-top |
+
+## Adding a paper
+
+1. Add an entry to `_data/publications.yml` (title, authors, venue, badge, links, `key`, `page`, `image`, `teaser`).
+2. Add `_publications/<Name>.md` with `pub_key: <key>`, the abstract as content and a `bibtex:` block.
+3. Put a ~1600px teaser at `images/publication/<key>.jpg` and a ~900px thumbnail at `images/publication/<key>-thumb.jpg`.
 
 ## Run locally
 

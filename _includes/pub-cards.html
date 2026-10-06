@@ -1,19 +1,19 @@
 <div class="pub-list">
 {% for pub in site.data.publications %}
-  <div class="pub-card">
-    <div class="pub-thumb">
-      <img src="{{ pub.image | relative_url }}" alt="{{ pub.title | split: ':' | first }} teaser" loading="lazy">
+  <article class="pub-card reveal">
+    <a class="pub-thumb" href="{{ pub.page | default: pub.links[0].url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ pub.image | relative_url }}" alt="" loading="lazy">
       <span class="pub-badge">{{ pub.badge }}</span>
-    </div>
+    </a>
     <div class="pub-body">
-      <div class="pub-title">{{ pub.title }}</div>
+      <h3 class="pub-title">{% if pub.page %}<a href="{{ pub.page | relative_url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
       <div class="pub-authors">{{ pub.authors | replace: "Jia-Peng Zhang", "<strong>Jia-Peng Zhang</strong>" }}</div>
       <div class="pub-venue">{{ pub.venue }}</div>
-      <div class="pub-summary">{{ pub.summary }}</div>
+      <p class="pub-summary">{{ pub.summary }}</p>
       <div class="pub-links">
-        {% for link in pub.links %}<a href="{{ link.url }}">{{ link.name }}</a>{% endfor %}{% if pub.page %}<a href="{{ pub.page | relative_url }}">BibTeX</a>{% endif %}
+        {% for link in pub.links %}<a href="{{ link.url }}"><i class="{% include pub-link-icon.html name=link.name %}" aria-hidden="true"></i> {{ link.name }}</a>{% endfor %}{% if pub.page %}<a href="{{ pub.page | relative_url }}#bibtex-code"><i class="{% include pub-link-icon.html name='BibTeX' %}" aria-hidden="true"></i> BibTeX</a>{% endif %}
       </div>
     </div>
-  </div>
+  </article>
 {% endfor %}
 </div>

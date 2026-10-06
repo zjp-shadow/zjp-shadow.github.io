@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<header class="page-banner page-banner--post">
+  <div class="page-banner__inner">
+    <p class="page-banner__eyebrow"><a href="{{ base_path }}/year-archive/"><i class="fas fa-arrow-left" aria-hidden="true"></i> Blog</a></p>
+    <h1 class="page-banner__title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></span>
+      <span><i class="fas fa-clock" aria-hidden="true"></i> {% include read-minutes.html content=content %} min read</span>
+      {% for tag in page.tags %}<span class="post-meta__tag">#{{ tag }}</span>{% endfor %}
+    </p>
+  </div>
+</header>
+
+<div id="main" role="main" class="wide">
+  <article class="wide__content page__content post-content" itemscope itemtype="http://schema.org/BlogPosting">
+    {{ content }}
+  </article>
+
+  {% if page.previous or page.next %}
+  <nav class="post-nav">
+    {% if page.previous %}<a class="post-nav__link" href="{{ base_path }}{{ page.previous.url }}"><small>Previous</small>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="post-nav__link post-nav__link--next" href="{{ base_path }}{{ page.next.url }}"><small>Next</small>{{ page.next.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</div>

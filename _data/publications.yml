@@ -1,8 +1,11 @@
 # Homepage publication cards, in display order.
-# "Jia-Peng Zhang" is bolded automatically; `badge` is the short venue tag on the thumbnail;
-# `page` is the paper's page in _publications/ (linked as "BibTeX").
+# "Jia-Peng Zhang" is bolded automatically; `badge` is the short venue tag on the thumbnail.
+# `key` ties an entry to its page in _publications/ (front matter `pub_key`), which lives at `page`
+# and shows the large `teaser`, the abstract and the BibTeX.
 - title: "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation"
+  key: topocap
   page: /publications/topocap
+  teaser: /images/publication/topocap.jpg
   authors: "Cheng-Feng Pu, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
   venue: "SIGGRAPH 2026 Conference Papers"
   badge: "SIGGRAPH 2026"
@@ -13,7 +16,9 @@
     - { name: "Dataset", url: "https://huggingface.co/datasets/duckduckplz/Mobjaverse" }
 
 - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
+  key: skintokens
   page: /publications/skintokens
+  teaser: /images/publication/skintokens.jpg
   authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
   venue: "arXiv preprint, 2026"
   badge: "arXiv 2026"
@@ -26,7 +31,9 @@
     - { name: "Model", url: "https://huggingface.co/VAST-AI/SkinTokens" }
 
 - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
+  key: unirig
   page: /publications/unirig
+  teaser: /images/publication/unirig.jpg
   authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
   venue: "ACM Transactions on Graphics (SIGGRAPH 2025)"
   badge: "SIGGRAPH 2025"
@@ -38,7 +45,9 @@
     - { name: "Code", url: "https://github.com/VAST-AI-Research/UniRig" }
 
 - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
+  key: charactergen
   page: /publications/charactergen
+  teaser: /images/publication/charactergen.jpg
   authors: "Hao-Yang Peng, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
   venue: "ACM Transactions on Graphics (SIGGRAPH 2024)"
   badge: "SIGGRAPH 2024"
@@ -50,7 +59,9 @@
     - { name: "Code", url: "https://github.com/zjp-shadow/CharacterGen" }
 
 - title: "Transferring the Intelligence of VLMs to Robotic Control"
+  key: vlm-robotic-control
   page: /publications/vlm-robotic-control
+  teaser: /images/publication/robodawn.jpg
   authors: "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu"
   venue: "arXiv preprint, 2026"
   badge: "arXiv 2026"

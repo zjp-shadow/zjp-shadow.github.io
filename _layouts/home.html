@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign author = site.author %}
+
+<header class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__text">
+      {% if page.hero.eyebrow %}<p class="hero__eyebrow">{{ page.hero.eyebrow }}</p>{% endif %}
+      <h1 class="hero__name">{{ author.name }}</h1>
+      {% if page.hero.tagline %}<p class="hero__tagline">{{ page.hero.tagline | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+      <div class="hero__actions">
+        {% if author.email %}<a class="btn-pill btn-pill--primary" href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>{% endif %}
+        {% if author.googlescholar %}<a class="btn-pill" href="{{ author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Scholar</a>{% endif %}
+        {% if author.github %}<a class="btn-pill" href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
+        <a class="btn-pill" href="{{ base_path }}/year-archive/"><i class="fas fa-pen-nib" aria-hidden="true"></i> Blog</a>
+      </div>
+      {% if page.hero.meta %}
+      <ul class="hero__meta">
+        {% for m in page.hero.meta %}<li><i class="{{ m.icon }}" aria-hidden="true"></i> {{ m.text }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="hero__avatar">
+      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ author.name }}">
+    </div>
+  </div>
+</header>
+
+<div id="main" role="main" class="home">
+  <article class="home__content page__content">
+    {{ content }}
+  </article>
+</div>

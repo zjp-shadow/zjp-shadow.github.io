@@ -1,9 +1,10 @@
 ---
+layout: wide
 title: "Publications"
+eyebrow: "Research"
+lead: "Papers on 3D character generation, rigging and animation. See [Google Scholar](https://scholar.google.com/citations?user=XkE68gcAAAAJ) for citations."
 permalink: /publications/
-author_profile: true
+author_profile: false
 ---
-
-<p class="pub-note">Also see my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
 
 {% include pub-cards.html %}

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<header class="page-banner">
+  <div class="page-banner__inner">
+    {% if page.eyebrow %}<p class="page-banner__eyebrow">{{ page.eyebrow }}</p>{% endif %}
+    <h1 class="page-banner__title">{{ page.title }}</h1>
+    {% if page.lead %}<p class="page-banner__lead">{{ page.lead | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+  </div>
+</header>
+
+<div id="main" role="main" class="wide">
+  <div class="wide__content page__content">
+    {{ content }}
+  </div>
+</div>

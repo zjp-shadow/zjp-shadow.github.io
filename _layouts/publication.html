@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign pub = site.data.publications | where: "key", page.pub_key | first %}
+
+<div id="main" role="main" class="pub-page">
+  <article class="pub-page__inner" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a class="pub-page__back" href="{{ base_path }}/publications/"><i class="fas fa-arrow-left" aria-hidden="true"></i> All publications</a>
+
+    <header class="pub-page__header">
+      {% if pub.badge %}<span class="pub-page__badge">{{ pub.badge }}</span>{% endif %}
+      <h1 class="pub-page__title" itemprop="headline">{{ page.title }}</h1>
+      {% if pub.authors %}<p class="pub-page__authors">{{ pub.authors | replace: "Jia-Peng Zhang", "<strong>Jia-Peng Zhang</strong>" }}</p>{% endif %}
+      <p class="pub-page__venue">{{ page.venue }}</p>
+      <div class="pub-links pub-links--lg">
+        {% for link in pub.links %}<a href="{{ link.url }}"><i class="{% include pub-link-icon.html name=link.name %}" aria-hidden="true"></i> {{ link.name }}</a>{% endfor %}
+      </div>
+    </header>
+
+    {% if pub.teaser %}
+    <figure class="pub-page__teaser">
+      <img src="{{ pub.teaser | relative_url }}" alt="{{ page.title | split: ':' | first }} teaser">
+    </figure>
+    {% endif %}
+
+    <section class="pub-page__section">
+      <h2>Abstract</h2>
+      <div class="pub-page__abstract" itemprop="abstract">{{ content }}</div>
+    </section>
+
+    {% if page.bibtex %}
+    <section class="pub-page__section">
+      <div class="bibtex__head">
+        <h2>BibTeX</h2>
+        <button class="copy-btn" type="button" data-copy-target="bibtex-code"><i class="fas fa-copy" aria-hidden="true"></i> <span>Copy</span></button>
+      </div>
+      <pre class="bibtex"><code id="bibtex-code">{{ page.bibtex | strip | escape }}</code></pre>
+    </section>
+    {% endif %}
+  </article>
+</div>

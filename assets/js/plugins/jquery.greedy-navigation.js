@@ -3,6 +3,9 @@
 *
 * http://codepen.io/lukejacksonn/pen/PwmwWV
 *
+* Rewritten as a single pass: put every link back in the visible list, then move
+* links from the end into the dropdown until the bar fits. The first item (the
+* site title) never moves. Unlike the original recursive version this cannot loop.
 */
 
 var $nav = $('#site-nav');
@@ -10,52 +13,25 @@ var $btn = $('#site-nav button');
 var $vlinks = $('#site-nav .visible-links');
 var $hlinks = $('#site-nav .hidden-links');
 
-var breaks = [];
-
 function updateNav() {
+  $hlinks.children().appendTo($vlinks);
+  $btn.addClass('hidden');
 
-  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
-
-  // The visible list is overflowing the nav
-  if($vlinks.width() > availableSpace) {
-
-    // Record the width of the list
-    breaks.push($vlinks.width());
-
-    // Move item to the hidden list
+  var available = $nav.width();
+  while ($vlinks.width() > available && $vlinks.children().length > 1) {
     $vlinks.children().last().prependTo($hlinks);
-
-    // Show the dropdown btn
-    if($btn.hasClass('hidden')) {
+    if ($btn.hasClass('hidden')) {
       $btn.removeClass('hidden');
-    }
-
-  // The visible list is not overflowing
-  } else {
-
-    // There is space for another item in the nav
-    if(availableSpace > breaks[breaks.length-1]) {
-
-      // Move the item to the visible list
-      $hlinks.children().first().appendTo($vlinks);
-      breaks.pop();
-    }
-
-    // Hide the dropdown btn if hidden list is empty
-    if(breaks.length < 1) {
-      $btn.addClass('hidden');
-      $hlinks.addClass('hidden');
+      available = $nav.width() - $btn.width() - 30;
     }
   }
 
-  // Keep counter updated
-  $btn.attr("count", breaks.length);
-
-  // Recur if the visible list is still overflowing the nav
-  if($vlinks.width() > availableSpace) {
-    updateNav();
+  var hidden = $hlinks.children().length;
+  $btn.attr('count', hidden);
+  if (!hidden) {
+    $hlinks.addClass('hidden');
+    $btn.removeClass('close');
   }
-
 }
 
 // Window listeners
@@ -70,3 +46,6 @@ $btn.on('click', function() {
 });
 
 updateNav();
+
+// Re-measure once fonts and images have loaded and changed the link widths
+$(window).on('load', updateNav);

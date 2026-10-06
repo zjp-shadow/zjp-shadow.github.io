@@ -1,0 +1,1 @@
+{% comment %}Reading time in minutes. Counts characters rather than words so that Chinese text is estimated sensibly (about 450 characters per minute).{% endcomment %}{% assign chars = include.content | strip_html | strip_newlines | size %}{{ chars | divided_by: 450 | plus: 1 }}
