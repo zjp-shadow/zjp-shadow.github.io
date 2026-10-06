@@ -61,7 +61,7 @@ layout: compress
             {% for p in s.pubs %}
             <li class="cv-pub">
               <span class="cv-pub__line"><strong>{{ p.title }}</strong></span>
-              <span class="cv-pub__line">{% assign names = p.authors | split: ', ' %}{% for n in names %}<span class="cv-author">{% if n == 'Jiapeng Zhang' %}<strong>{{ n }}</strong>{% else %}{{ n }}{% endif %}{% unless forloop.last %},{% endunless %}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</span>
+              <span class="cv-pub__line">{% assign names = p.authors | split: ', ' %}{% for n in names %}<span class="cv-author">{% if n == 'Jia-Peng Zhang' %}<strong>{{ n }}</strong>{% else %}{{ n }}{% endif %}{% unless forloop.last %},{% endunless %}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</span>
               <span class="cv-pub__line">{{ p.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if p.url %} <span class="cv-url">(<a href="{{ p.url }}">{{ p.url | remove_first: 'https://' | remove_first: 'http://' }}</a>)</span>{% endif %}</span>
               <span class="cv-pub__desc">{{ p.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
             </li>

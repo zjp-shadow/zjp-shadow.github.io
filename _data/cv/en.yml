@@ -1,10 +1,10 @@
 # English CV, rendered by _layouts/cv.html at /cv/ (PDF: /files/cv/Jiapeng_Zhang_CV_EN.pdf).
 # Keep this file and zh.yml in sync. Text fields accept Markdown (`**bold**`, `*italic*`);
-# "Jiapeng Zhang" is bolded in author lists. Links are shown without "https://".
-name: "Jiapeng Zhang"
+# "Jia-Peng Zhang" is bolded in author lists. Links are shown without "https://".
+name: "Jia-Peng Zhang"
 name_alt: "张嘉鹏"
 contact:
-  - { icon: "fas fa-envelope", text: "jiapengzhang@mails.tsinghua.edu.cn", url: "mailto:jiapengzhang@mails.tsinghua.edu.cn" }
+  - { icon: "fas fa-envelope", text: "zjp24@mails.tsinghua.edu.cn", url: "mailto:zjp24@mails.tsinghua.edu.cn" }
   - { icon: "fas fa-globe", text: "zjp-shadow.github.io", url: "https://zjp-shadow.github.io" }
   - { icon: "fab fa-github", text: "zjp-shadow", url: "https://github.com/zjp-shadow" }
   - { icon: "fas fa-graduation-cap", text: "Google Scholar", url: "https://scholar.google.com/citations?user=XkE68gcAAAAJ" }
@@ -37,25 +37,30 @@ sections:
     icon: "fas fa-book"
     pubs:
       - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
-        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)*, 2026, ***Accepted with Minor Revisions***"
         url: "https://zjp-shadow.github.io/works/SkinTokens/"
         desc: "Introduced *SkinTokens*, a learned discrete representation for skinning weights. By framing skinning as a sequence prediction task, the unified *TokenRig* framework jointly models skeletons and skin deformations, achieving substantial improvements in rigorous out-of-distribution geometry evaluations."
       - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
-        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2025***)"
         url: "https://zjp-shadow.github.io/works/UniRig/"
         desc: "Proposed UniRig, a unified framework for automated skeletal rigging leveraging large autoregressive models and a novel *Skeleton Tree Tokenization* method. Trained on *Rig-XL* (a new large-scale dataset), it efficiently generates topologically valid structures, far outperforming existing state-of-the-art tools across diverse generic models."
       - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
-        authors: "Haoyang Peng, Jiapeng Zhang, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Hao-Yang Peng, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2024***), 43(4): 1–13, 2024"
         url: "https://charactergen.github.io/"
         desc: "Presented a highly efficient framework for lifting single images into pose-unified 3D character meshes. It utilizes an image-conditioned multi-view diffusion model for pose calibration and a transformer-based sparse-view network, producing geometrically and texturally robust outputs ready for animation."
       - title: "Transferring the Intelligence of VLMs to Robotic Control"
-        authors: "Menghao Guo, Zhehan Mo, Jiajun Wang, Yi Zhang, Kejin Wang, Yixuan Deng, Jiapeng Zhang, Yongming Rao, Shi-Min Hu"
+        authors: "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu"
         venue: "*arXiv preprint arXiv:2609.22966*, 2026"
         url: "https://robodawn.top/"
         desc: "Introduced *RoboDawn*, a human-intuitive interface that lets an agentic VLM control robots in a closed loop through discrete translation, rotation and gripper commands, grounded by a few in-context demonstrations. Without task-specific robot training it achieves state-of-the-art success rates on RoboTwin 2.0 C2R and RoboDojo, and transfers to a real Franka arm."
+      - title: "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation"
+        authors: "Cheng-Feng Pu, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+        venue: "***SIGGRAPH 2026*** *Conference Papers*"
+        url: "https://arxiv.org/abs/2606.12153"
+        desc: "Introduced TopoCap, the first unified framework that extracts motion from monocular video and retargets it onto characters with arbitrary, unseen skeletal topologies, from bipeds to hexapods and inanimate objects, without test-time optimization. A Graph CVAE learns a topology-agnostic motion manifold, and conditional flow matching predicts its codes from video; trained on *Mobjaverse*, a new dataset with over 5,000 skeletal topologies and 2 million frames."
 
   - title: "Open Source Projects"
     icon: "fab fa-github"

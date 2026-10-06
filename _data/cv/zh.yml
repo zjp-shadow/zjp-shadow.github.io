@@ -1,9 +1,9 @@
 # 中文简历，由 _layouts/cv.html 渲染到 /cv/zh/（PDF：/files/cv/Jiapeng_Zhang_CV_ZH.pdf）。
-# 与 en.yml 保持同步。文本支持 Markdown（`**加粗**`、`*斜体*`）；作者列表中的 "Jiapeng Zhang" 自动加粗。
+# 与 en.yml 保持同步。文本支持 Markdown（`**加粗**`、`*斜体*`）；作者列表中的 "Jia-Peng Zhang" 自动加粗。
 name: "张嘉鹏"
-name_alt: "Jiapeng Zhang"
+name_alt: "Jia-Peng Zhang"
 contact:
-  - { icon: "fas fa-envelope", text: "jiapengzhang@mails.tsinghua.edu.cn", url: "mailto:jiapengzhang@mails.tsinghua.edu.cn" }
+  - { icon: "fas fa-envelope", text: "zjp24@mails.tsinghua.edu.cn", url: "mailto:zjp24@mails.tsinghua.edu.cn" }
   - { icon: "fas fa-globe", text: "zjp-shadow.github.io", url: "https://zjp-shadow.github.io" }
   - { icon: "fab fa-github", text: "zjp-shadow", url: "https://github.com/zjp-shadow" }
   - { icon: "fas fa-graduation-cap", text: "Google Scholar", url: "https://scholar.google.com/citations?user=XkE68gcAAAAJ" }
@@ -36,25 +36,30 @@ sections:
     icon: "fas fa-book"
     pubs:
       - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
-        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)*, 2026，**小修后接收**"
         url: "https://zjp-shadow.github.io/works/SkinTokens/"
         desc: "提出 *SkinTokens*，一种可学习的蒙皮权重离散紧凑表示。将蒙皮建模为序列预测任务，统一的 *TokenRig* 框架联合生成骨骼与蒙皮，在严格的分布外几何评测上取得显著提升。"
       - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
-        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2025***)"
         url: "https://zjp-shadow.github.io/works/UniRig/"
         desc: "提出 UniRig，基于大规模自回归模型与全新骨骼树序列化（*Skeleton Tree Tokenization*）方法的统一自动绑骨框架。在新构建的大规模数据集 *Rig-XL* 上训练，可高效生成拓扑合法的骨骼，在多种类型模型上大幅超越现有最优方法。"
       - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
-        authors: "Haoyang Peng, Jiapeng Zhang, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        authors: "Hao-Yang Peng, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
         venue: "*ACM Transactions on Graphics (TOG)* (***SIGGRAPH 2024***), 43(4): 1–13, 2024"
         url: "https://charactergen.github.io/"
         desc: "提出从单张图像高效生成姿态规范化三维角色网格的框架：以图像条件多视图扩散模型完成姿态校准，再由基于 Transformer 的稀疏视图重建网络生成几何与纹理鲁棒、可直接用于动画的结果。"
       - title: "Transferring the Intelligence of VLMs to Robotic Control"
-        authors: "Menghao Guo, Zhehan Mo, Jiajun Wang, Yi Zhang, Kejin Wang, Yixuan Deng, Jiapeng Zhang, Yongming Rao, Shi-Min Hu"
+        authors: "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu"
         venue: "*arXiv preprint arXiv:2609.22966*, 2026"
         url: "https://robodawn.top/"
         desc: "提出 *RoboDawn*：通过一组符合人类直觉的离散平移、旋转与夹爪指令，让智能体式 VLM 闭环控制机器人，并以少量上下文示例完成接口与任务策略的对齐。无需针对任务的机器人训练，即在 RoboTwin 2.0 C2R 与 RoboDojo 上取得最优成功率，并可迁移到真实 Franka 机械臂。"
+      - title: "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation"
+        authors: "Cheng-Feng Pu, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+        venue: "***SIGGRAPH 2026*** *Conference Papers*"
+        url: "https://arxiv.org/abs/2606.12153"
+        desc: "提出 TopoCap，首个从单目视频中提取动作、并在无需测试时优化的情况下重定向到任意未见骨骼拓扑角色（从双足、六足生物到无生命物体）的统一框架。以图 CVAE 学习与拓扑无关的动作流形，再用条件流匹配从视频特征预测其编码；并构建了包含 5,000 余种骨骼拓扑、200 万帧的数据集 *Mobjaverse*。"
 
   - title: "开源项目"
     icon: "fab fa-github"
