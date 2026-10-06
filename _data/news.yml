@@ -1,0 +1,11 @@
+# Homepage news, newest first. `text` is Markdown.
+- date: "2026.09"
+  text: "Our paper on transferring the intelligence of VLMs to robotic control is released on [arXiv](https://arxiv.org/abs/2609.22966). Check the [project page](https://robodawn.top/)."
+- date: "2026.03"
+  text: "[TopoCap](https://arxiv.org/abs/2606.12153) is accepted to **SIGGRAPH 2026**: motion capture from monocular video onto characters with arbitrary skeletal topologies."
+- date: "2026.02"
+  text: "[SkinTokens](/works/SkinTokens/) is released! Code and models are available on [GitHub](https://github.com/VAST-AI-Research/SkinTokens) and [Hugging Face](https://huggingface.co/VAST-AI/SkinTokens)."
+- date: "2025.03"
+  text: "[UniRig](/works/UniRig/) is accepted to **SIGGRAPH 2025** (ACM TOG). Code is available on [GitHub](https://github.com/VAST-AI-Research/UniRig)."
+- date: "2024.03"
+  text: "[CharacterGen](https://charactergen.github.io/) is accepted to **SIGGRAPH 2024** (ACM TOG)."

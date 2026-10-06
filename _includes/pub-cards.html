@@ -1,0 +1,19 @@
+<div class="pub-list">
+{% for pub in site.data.publications %}
+  <div class="pub-card">
+    <div class="pub-thumb">
+      <img src="{{ pub.image | relative_url }}" alt="{{ pub.title | split: ':' | first }} teaser" loading="lazy">
+      <span class="pub-badge">{{ pub.badge }}</span>
+    </div>
+    <div class="pub-body">
+      <div class="pub-title">{{ pub.title }}</div>
+      <div class="pub-authors">{{ pub.authors | replace: "Jia-Peng Zhang", "<strong>Jia-Peng Zhang</strong>" }}</div>
+      <div class="pub-venue">{{ pub.venue }}</div>
+      <div class="pub-summary">{{ pub.summary }}</div>
+      <div class="pub-links">
+        {% for link in pub.links %}<a href="{{ link.url }}">{{ link.name }}</a>{% endfor %}{% if pub.page %}<a href="{{ pub.page | relative_url }}">BibTeX</a>{% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>

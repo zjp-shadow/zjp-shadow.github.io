@@ -1,0 +1,213 @@
+/* ==========================================================================
+   HOMEPAGE (about page): intro, research tags, news, publication cards
+   ========================================================================== */
+
+$accent: #6b2a7f; // Tsinghua purple
+$accent-soft: mix(#fff, $accent, 92%);
+$card-border: mix(#fff, $gray, 82%);
+
+.page__content {
+  h2 {
+    position: relative;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid $border-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 2.5em;
+      height: 2px;
+      background: $accent;
+    }
+  }
+}
+
+.home-intro {
+  p {
+    line-height: 1.7;
+  }
+}
+
+.home-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0.25em 0 1.5em;
+
+  span {
+    padding: 0.25em 0.8em;
+    border-radius: 999px;
+    background: $accent-soft;
+    color: $accent;
+    font-size: $type-size-6;
+    font-weight: 600;
+  }
+}
+
+/* News */
+
+.news-list {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 1em;
+    padding: 0.55em 0;
+    margin: 0;
+    border-bottom: 1px dashed $border-color;
+    font-size: $type-size-5;
+    line-height: 1.55;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.news-date {
+  flex: 0 0 auto;
+  min-width: 4.8em;
+  height: fit-content;
+  padding: 0.1em 0.5em;
+  border-radius: 4px;
+  background: $accent-soft;
+  color: $accent;
+  font-family: $monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Publications */
+
+.pub-note {
+  margin: 0 0 1em;
+  color: $gray;
+  font-size: $type-size-6;
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  margin-bottom: 2em;
+}
+
+.pub-card {
+  display: flex;
+  gap: 1.25em;
+  padding: 1em;
+  border: 1px solid $card-border;
+  border-radius: 10px;
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: mix(#fff, $accent, 60%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  @include breakpoint(max-width $medium-wide) {
+    flex-direction: column;
+  }
+}
+
+.pub-thumb {
+  position: relative;
+  flex: 0 0 36%;
+  align-self: flex-start;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid $border-color;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  @include breakpoint(max-width $medium-wide) {
+    align-self: stretch;
+  }
+}
+
+.pub-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+  background: $accent;
+  color: #fff;
+  font-size: 0.68em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pub-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: $type-size-6;
+  line-height: 1.5;
+}
+
+.pub-title {
+  margin-bottom: 0.35em;
+  color: $darker-gray;
+  font-size: 1.12em;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pub-authors {
+  color: $dark-gray;
+
+  strong {
+    color: $darker-gray;
+    text-decoration: underline;
+    text-decoration-color: mix(#fff, $accent, 40%);
+    text-underline-offset: 2px;
+  }
+}
+
+.pub-venue {
+  margin: 0.2em 0 0.45em;
+  color: $accent;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.pub-summary {
+  margin-bottom: 0.6em;
+  color: $gray;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+
+  a {
+    padding: 0.15em 0.7em;
+    border: 1px solid $card-border;
+    border-radius: 999px;
+    color: $dark-gray;
+    font-size: 0.92em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: $accent;
+      background: $accent;
+      color: #fff;
+    }
+  }
+}

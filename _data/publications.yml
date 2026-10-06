@@ -1,0 +1,61 @@
+# Homepage publication cards, in display order.
+# "Jia-Peng Zhang" is bolded automatically; `badge` is the short venue tag on the thumbnail;
+# `page` is the paper's page in _publications/ (linked as "BibTeX").
+- title: "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation"
+  page: /publications/topocap
+  authors: "Cheng-Feng Pu, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+  venue: "SIGGRAPH 2026 Conference Papers"
+  badge: "SIGGRAPH 2026"
+  image: /images/publication/topocap-thumb.jpg
+  summary: "Captures motion from monocular video and retargets it onto characters with arbitrary, unseen skeletal topologies, from bipeds to hexapods, without test-time optimization."
+  links:
+    - { name: "Paper", url: "https://arxiv.org/abs/2606.12153" }
+    - { name: "Dataset", url: "https://huggingface.co/datasets/duckduckplz/Mobjaverse" }
+
+- title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
+  page: /publications/skintokens
+  authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+  venue: "arXiv preprint, 2026"
+  badge: "arXiv 2026"
+  image: /images/publication/skintokens-thumb.jpg
+  summary: "A discrete, compact representation of skinning weights that turns rigging into token prediction, unifying skeleton and skinning generation in one autoregressive model."
+  links:
+    - { name: "Project Page", url: "/works/SkinTokens/" }
+    - { name: "Paper", url: "https://arxiv.org/abs/2602.04805" }
+    - { name: "Code", url: "https://github.com/VAST-AI-Research/SkinTokens" }
+    - { name: "Model", url: "https://huggingface.co/VAST-AI/SkinTokens" }
+
+- title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
+  page: /publications/unirig
+  authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2025)"
+  badge: "SIGGRAPH 2025"
+  image: /images/publication/unirig-thumb.jpg
+  summary: "A single model that automatically rigs diverse 3D assets, from humans and animals to inanimate objects, with skeletons and skinning weights."
+  links:
+    - { name: "Project Page", url: "/works/UniRig/" }
+    - { name: "Paper", url: "https://arxiv.org/abs/2504.12451" }
+    - { name: "Code", url: "https://github.com/VAST-AI-Research/UniRig" }
+
+- title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
+  page: /publications/charactergen
+  authors: "Hao-Yang Peng, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2024)"
+  badge: "SIGGRAPH 2024"
+  image: /images/publication/charactergen-thumb.jpg
+  summary: "Generates a pose-canonicalized 3D character mesh from a single image, ready for downstream rigging and animation."
+  links:
+    - { name: "Project Page", url: "https://charactergen.github.io/" }
+    - { name: "Paper", url: "https://arxiv.org/abs/2402.17214" }
+    - { name: "Code", url: "https://github.com/zjp-shadow/CharacterGen" }
+
+- title: "Transferring the Intelligence of VLMs to Robotic Control"
+  page: /publications/vlm-robotic-control
+  authors: "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu"
+  venue: "arXiv preprint, 2026"
+  badge: "arXiv 2026"
+  image: /images/publication/robodawn-thumb.jpg
+  summary: "Studies whether the intelligence of vision-language models can carry over from the digital world to physical robotic control."
+  links:
+    - { name: "Project Page", url: "https://robodawn.top/" }
+    - { name: "Paper", url: "https://arxiv.org/abs/2609.22966" }
