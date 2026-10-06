@@ -17,10 +17,10 @@ If you are interested in 3D characters, rigging, animation, or VTuber research, 
 ## News
 
 - **2026.09**: Our paper on transferring the intelligence of VLMs to robotic control is released on [arXiv](https://arxiv.org/abs/2609.22966). Check the [project page](https://robodawn.top/).
-- **2026.06**: [TopoCap](https://arxiv.org/abs/2606.12153) is released: motion capture from monocular video onto characters with arbitrary skeletal topologies.
+- **2026.03**: [TopoCap](https://arxiv.org/abs/2606.12153) is accepted to **SIGGRAPH 2026**: motion capture from monocular video onto characters with arbitrary skeletal topologies.
 - **2026.02**: [SkinTokens](/works/SkinTokens/) is released! Code and models are available on [GitHub](https://github.com/VAST-AI-Research/SkinTokens) and [Hugging Face](https://huggingface.co/VAST-AI/SkinTokens).
-- **2025.04**: [UniRig](/works/UniRig/) is accepted to **SIGGRAPH 2025** (ACM TOG). Code is available on [GitHub](https://github.com/VAST-AI-Research/UniRig).
-- **2024.02**: [CharacterGen](https://charactergen.github.io/) is accepted to **SIGGRAPH 2024** (ACM TOG).
+- **2025.03**: [UniRig](/works/UniRig/) is accepted to **SIGGRAPH 2025** (ACM TOG). Code is available on [GitHub](https://github.com/VAST-AI-Research/UniRig).
+- **2024.03**: [CharacterGen](https://charactergen.github.io/) is accepted to **SIGGRAPH 2024** (ACM TOG).
 
 ## Publications
 
@@ -28,7 +28,7 @@ If you are interested in 3D characters, rigging, animation, or VTuber research, 
 
 - **TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation**<br>
   Cheng-Feng Pu, **Jia-Peng Zhang**, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu<br>
-  *arXiv preprint, 2026*<br>
+  *SIGGRAPH 2026 Conference Papers*<br>
   [[Paper]](https://arxiv.org/abs/2606.12153) [[Dataset]](https://huggingface.co/datasets/duckduckplz/Mobjaverse)
 
 - **SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging**<br>

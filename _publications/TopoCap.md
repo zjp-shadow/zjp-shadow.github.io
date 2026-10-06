@@ -4,7 +4,7 @@ collection: publications
 permalink: /publications/topocap
 excerpt: 'TopoCap extracts motion from monocular video and retargets it onto characters with arbitrary, unseen skeletal topologies, from bipeds to hexapods and inanimate objects, without test-time optimization.'
 date: 2026-06-10
-venue: 'arXiv preprint'
+venue: 'SIGGRAPH 2026 Conference Papers'
 paperurl: 'https://arxiv.org/pdf/2606.12153'
 ---
 
@@ -14,10 +14,11 @@ TopoCap extracts motion from monocular video and retargets it onto characters wi
 
 Bibtex citation:
 ```
-@article{pu2026topocap,
+@inproceedings{pu2026topocap,
   title   ={TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation},
   author  ={Cheng-Feng Pu and Jia-Peng Zhang and Meng-Hao Guo and Yan-Pei Cao and Shi-Min Hu},
-  journal ={arXiv preprint arXiv:2606.12153},
-  year    ={2026}
+  booktitle ={SIGGRAPH 2026 Conference Papers},
+  year    ={2026},
+  doi     ={10.1145/3799902.3811159}
 }
 ```
