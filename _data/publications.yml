@@ -1,9 +1,10 @@
-# Homepage publication cards, in display order.
+# Publication cards (homepage + /publications/), shown newest first by `date`.
 # "Jia-Peng Zhang" is bolded automatically; `badge` is the short venue tag on the thumbnail.
 # `key` ties an entry to its page in _publications/ (front matter `pub_key`), which lives at `page`
 # and shows the large `teaser`, the abstract and the BibTeX.
 - title: "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation"
   key: topocap
+  date: 2026-06-10
   page: /publications/topocap
   teaser: /images/publication/topocap.jpg
   authors: "Cheng-Feng Pu, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
@@ -17,6 +18,7 @@
 
 - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
   key: skintokens
+  date: 2026-02-04
   page: /publications/skintokens
   teaser: /images/publication/skintokens.jpg
   authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
@@ -32,6 +34,7 @@
 
 - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
   key: unirig
+  date: 2025-04-17
   page: /publications/unirig
   teaser: /images/publication/unirig.jpg
   authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
@@ -46,6 +49,7 @@
 
 - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
   key: charactergen
+  date: 2024-02-27
   page: /publications/charactergen
   teaser: /images/publication/charactergen.jpg
   authors: "Hao-Yang Peng, Jia-Peng Zhang, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
@@ -60,6 +64,7 @@
 
 - title: "Transferring the Intelligence of VLMs to Robotic Control"
   key: vlm-robotic-control
+  date: 2026-09-26
   page: /publications/vlm-robotic-control
   teaser: /images/publication/robodawn.jpg
   authors: "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu"

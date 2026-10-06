@@ -1,5 +1,6 @@
 <div class="pub-list">
-{% for pub in site.data.publications %}
+{% assign pubs = site.data.publications | sort: "date" | reverse %}
+{% for pub in pubs %}
   <article class="pub-card reveal">
     <a class="pub-thumb" href="{{ pub.page | default: pub.links[0].url | relative_url }}" tabindex="-1" aria-hidden="true">
       <img src="{{ pub.image | relative_url }}" alt="" loading="lazy">

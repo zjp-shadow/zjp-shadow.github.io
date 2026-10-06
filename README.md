@@ -20,7 +20,7 @@ Built with Jekyll on top of the [AcademicPages](https://github.com/academicpages
 
 ## Adding a paper
 
-1. Add an entry to `_data/publications.yml` (title, authors, venue, badge, links, `key`, `page`, `image`, `teaser`).
+1. Add an entry to `_data/publications.yml` (title, authors, venue, badge, links, `key`, `date`, `page`, `image`, `teaser`). Cards are sorted by `date`, newest first.
 2. Add `_publications/<Name>.md` with `pub_key: <key>`, the abstract as content and a `bibtex:` block.
 3. Put a ~1600px teaser at `images/publication/<key>.jpg` and a ~900px thumbnail at `images/publication/<key>-thumb.jpg`.
 

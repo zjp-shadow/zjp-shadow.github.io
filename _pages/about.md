@@ -3,7 +3,6 @@ permalink: /
 layout: home
 title: "Jiapeng Zhang"
 excerpt: "Ph.D. student at Tsinghua University working on 3D characters, rigging and animation."
-author_profile: false
 redirect_from: 
   - /about/
   - /about.html
@@ -62,9 +61,9 @@ If you are interested in 3D characters, rigging, animation, or VTuber research, 
       <p>AIGC work with direct visual impact: things you can see, play with, and animate.</p>
     </div>
     <div class="interest">
-      <i class="fas fa-swimmer" aria-hidden="true"></i>
+      <i class="fas fa-running" aria-hidden="true"></i>
       <h3>Sports</h3>
-      <p>Skating and swimming.</p>
+      <p>Badminton, skating, and swimming.</p>
     </div>
     <div class="interest">
       <i class="fas fa-gamepad" aria-hidden="true"></i>
