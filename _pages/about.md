@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in the Department of Computer Science and Technology at [Tsinghua University](https://www.tsinghua.edu.cn/), working in the [CSCG Group](https://cg.cs.tsinghua.edu.cn/) under the supervision of Prof. [Shi-Min Hu](https://cg.cs.tsinghua.edu.cn/shimin.htm). I also collaborate closely with [VAST](https://www.tripo3d.ai/).
+I am a third-year Ph.D. student in the Department of Computer Science and Technology at [Tsinghua University](https://www.tsinghua.edu.cn/), working in the [CSCG Group](https://cg.cs.tsinghua.edu.cn/) under the supervision of Prof. [Shi-Min Hu](https://cg.cs.tsinghua.edu.cn/shimin.htm).
 
 My research lies at the intersection of **computer graphics** and **generative AI**, with a focus on **3D characters**: generating them, rigging them, and bringing them to life with animation. I am especially interested in technologies for games and virtual characters, like **VTubers**, aiming to bring people a better digital entertainment experience.
 
