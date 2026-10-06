@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Jiapeng Zhang"
 title_separator          : "-"
 name                     : &name "Jiapeng Zhang"
-description              : &description "personal description"
+description              : &description "Ph.D. student at Tsinghua University working on 3D characters, rigging and animation."
 url                      : https://zjp-shadow.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "zjp-shadow/zjp-shadow.github.io"
@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Jiapeng Zhang"
   avatar           : "photo.png"
-  bio              : "A senior student from Tsinghua University"
+  bio              : "Ph.D. student @ Tsinghua University. 3D characters, rigging & animation."
   location         : "Beijing, China"
-  employer         :
+  employer         : "Tsinghua University"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=XkE68gcAAAAJ&hl=zh-CN"
   email            : "zjp24@mails.tsinghua.edu.cn"

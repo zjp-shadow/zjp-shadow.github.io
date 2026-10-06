@@ -1,18 +1,18 @@
 ---
 title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
-collection: SIGGRAPH
+collection: publications
 permalink: /publications/charactergen
-excerpt: '![](../images/publication/charactergen.png)CharacterGen takes a single input image and generates 3D pose-unified character meshes with high-quality and consistent appearance, which can be directly utilized in downstream rigging and animation workflows.'
+excerpt: '![](/images/publication/charactergen.png)CharacterGen takes a single input image and generates 3D pose-unified character meshes with high-quality and consistent appearance, which can be directly utilized in downstream rigging and animation workflows.'
 date: 2024-02-27
-venue: 'SIGGRAPH(TOG)'
+venue: 'ACM Transactions on Graphics (SIGGRAPH 2024)'
 paperurl: 'https://arxiv.org/pdf/2402.17214.pdf'
 ---
 
-# [Project Page](https://charactergen.github.io/)
+# [Project Page](https://charactergen.github.io/) · [Code](https://github.com/zjp-shadow/CharacterGen)
 
 CharacterGen takes a single input image and generates 3D pose-unified character meshes with high-quality and consistent appearance, which can be directly utilized in downstream rigging and animation workflows.
 
-![](../images/publication/charactergen.png)
+![](/images/publication/charactergen.png)
 
 # [Download paper](https://arxiv.org/pdf/2402.17214.pdf)
 
