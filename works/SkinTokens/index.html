@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/avatar.png">
+  <link rel="icon" href="/images/favicon-32x32.png">
 
   <style>
     body {
@@ -110,7 +110,6 @@
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
@@ -232,7 +231,7 @@
   <section class="section">
     <div class="container is-widescreen">
       <span class="teaser">
-        <video poster="./static/images/teaser.png" id="teaser" controls="" muted="" loop="" height="100%">
+        <video poster="./static/images/teaser.webp" id="teaser" controls="" muted="" loop="" preload="none" height="100%">
           <source src="./static/videos/show.mp4" type="video/mp4">
         </video>
         <strong>Automated rigging with <span class="title-text">TokenRig</span>.</strong> We present TokenRig, a unified generative framework that produces high-quality rigs for diverse 3D assets. By leveraging SkinTokens, i.e., our novel, discrete representation for skinning weights, our method robustly generates high-fidelity skeletons and precise skinning maps (visualized as heatmaps) for complex, real-world geometries, ranging from stylized anime characters to quadrupeds and fantasy creatures.
@@ -261,7 +260,7 @@
           <h2 class="title is-3">Method</h2>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="./static/images/pipeline.png" alt="Pipeline overview">
+              <img src="./static/images/pipeline.webp" alt="Pipeline overview">
             </figure>
             <p class="has-text-centered" style="margin-top: 1rem;">
               <strong>Overview of the TokenRig Framework.</strong> Our method consists of three key stages:
@@ -296,7 +295,7 @@
           <h3 class="title is-4" style="margin-top: 2rem;">Skeleton Generation Comparison</h3>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="./static/images/compare_rigging.png" alt="Skeleton generation comparison">
+              <img src="./static/images/compare_rigging.webp" alt="Skeleton generation comparison">
             </figure>
             <p class="has-text-centered" style="margin-top: 1rem;">
               <strong>Qualitative Comparison of Skeleton Generation.</strong> We compare TokenRig (Ours) against state-of-the-art baselines. While baseline methods exhibit partial structures, missing details, or redundant joints, our method synthesizes structurally coherent and semantically faithful skeletons across diverse character types.
@@ -307,7 +306,7 @@
           <h3 class="title is-4" style="margin-top: 2rem;">Skinning Prediction Comparison</h3>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="./static/images/compare_skin.png" alt="Skinning prediction comparison">
+              <img src="./static/images/compare_skin.webp" alt="Skinning prediction comparison">
             </figure>
             <p class="has-text-centered" style="margin-top: 1rem;">
               <strong>Qualitative Comparison of Skinning Prediction.</strong> We visualize predicted skinning weights and the corresponding average L1 error maps. Baseline methods often suffer from "bleeding" artifacts, where weights spill onto unconnected mesh parts. TokenRig (Ours) produces clean, locally coherent influence maps that closely match the Ground Truth, particularly in fine-grained regions like fingers.
@@ -318,7 +317,7 @@
           <h3 class="title is-4" style="margin-top: 2rem;">Impact of Reinforcement Learning</h3>
           <div class="content has-text-justified">
             <figure class="image" style="max-width: 70%; margin: 0 auto;">
-              <img src="./static/images/compare_grpo.png" alt="GRPO comparison">
+              <img src="./static/images/compare_grpo.webp" alt="GRPO comparison">
             </figure>
           </div>
 
@@ -326,7 +325,7 @@
           <h3 class="title is-4" style="margin-top: 2rem;">Diverse Generation Results</h3>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="./static/images/wild.png" alt="Diverse generation results">
+              <img src="./static/images/wild.webp" alt="Diverse generation results">
             </figure>
             <p class="has-text-centered" style="margin-top: 1rem;">
               <strong>Diverse Generation Results.</strong> We demonstrate the generalization capacity of TokenRig on a wide range of inputs, including unseen test-set samples and complex in-the-wild assets. The model robustly synthesizes fully articulated skeletons and accurate skinning weights.

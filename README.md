@@ -14,7 +14,7 @@ Built with Jekyll on top of the [AcademicPages](https://github.com/academicpages
 | `_publications/` | One page per paper (abstract + BibTeX); uses `_layouts/publication.html` |
 | `_posts/` | Blog posts; use `_layouts/post.html`, listed by `_pages/year-archive.html` |
 | `works/` | Standalone project pages (UniRig, SkinTokens) |
-| `images/publication/` | Paper teasers (`<key>.jpg`) and card thumbnails (`<key>-thumb.jpg`) |
+| `images/publication/` | Paper teasers (`<key>.webp`, 1600px) and card thumbnails (`<key>-thumb.webp`, 760px) |
 | `_sass/_theme.scss` | Site theme: colors (light/dark CSS variables), typography, components |
 | `assets/js/site.js` | Dark-mode toggle, BibTeX copy, scroll reveal, back-to-top |
 
@@ -22,7 +22,7 @@ Built with Jekyll on top of the [AcademicPages](https://github.com/academicpages
 
 1. Add an entry to `_data/publications.yml` (title, authors, venue, badge, links, `key`, `date`, `page`, `image`, `teaser`). Cards are sorted by `date`, newest first.
 2. Add `_publications/<Name>.md` with `pub_key: <key>`, the abstract as content and a `bibtex:` block.
-3. Put a ~1600px teaser at `images/publication/<key>.jpg` and a ~900px thumbnail at `images/publication/<key>-thumb.jpg`.
+3. Put a 1600px teaser at `images/publication/<key>.webp` and a 760px thumbnail at `images/publication/<key>-thumb.webp` (WebP keeps the site light).
 
 ## Run locally
 

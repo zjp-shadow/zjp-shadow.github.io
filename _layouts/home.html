@@ -10,7 +10,7 @@ layout: default
   <div class="hero__inner">
     <div class="hero__text">
       {% if page.hero.eyebrow %}<p class="hero__eyebrow">{{ page.hero.eyebrow }}</p>{% endif %}
-      <h1 class="hero__name">{{ author.name }}</h1>
+      <h1 class="hero__name">{{ author.name }}{% if author.name_zh %} <span class="hero__name-zh" lang="zh-CN">{{ author.name_zh }}</span>{% endif %}</h1>
       {% if page.hero.tagline %}<p class="hero__tagline">{{ page.hero.tagline | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
       <div class="hero__actions">
         {% if author.email %}<a class="btn-pill btn-pill--primary" href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>{% endif %}
@@ -25,7 +25,7 @@ layout: default
       {% endif %}
     </div>
     <div class="hero__avatar">
-      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ author.name }}">
+      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ author.name }}" width="400" height="400" fetchpriority="high">
     </div>
   </div>
 </header>

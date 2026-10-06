@@ -1,6 +1,39 @@
-/* Site-wide enhancements: theme toggle, BibTeX copy, reveal-on-scroll, back-to-top. */
+/* Site-wide enhancements: responsive nav, theme toggle, BibTeX copy, reveal-on-scroll, back-to-top. */
 (function () {
   var root = document.documentElement;
+
+  // Responsive nav: move links into the dropdown, from the end, until the bar fits.
+  // The first item (the site title) always stays visible.
+  var nav = document.getElementById('site-nav');
+  if (nav) {
+    var btn = nav.querySelector('button');
+    var vlinks = nav.querySelector('.visible-links');
+    var hlinks = nav.querySelector('.hidden-links');
+    var fit = function () {
+      while (hlinks.firstElementChild) vlinks.appendChild(hlinks.firstElementChild);
+      btn.classList.add('hidden');
+      var available = nav.clientWidth;
+      while (vlinks.offsetWidth > available && vlinks.children.length > 1) {
+        hlinks.insertBefore(vlinks.lastElementChild, hlinks.firstElementChild);
+        if (btn.classList.contains('hidden')) {
+          btn.classList.remove('hidden');
+          available = nav.clientWidth - btn.offsetWidth - 30;
+        }
+      }
+      btn.setAttribute('count', hlinks.children.length);
+      if (!hlinks.children.length) {
+        hlinks.classList.add('hidden');
+        btn.classList.remove('close');
+      }
+    };
+    btn.addEventListener('click', function () {
+      hlinks.classList.toggle('hidden');
+      btn.classList.toggle('close');
+    });
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    fit();
+  }
 
   // Theme toggle
   var toggle = document.querySelector('.theme-toggle');

@@ -12,11 +12,13 @@ baseurl                  : ""
 repository               : "zjp-shadow/zjp-shadow.github.io"
 future                   : true
 timezone                 : Asia/Shanghai
+og_image                 : "avatar.jpg"   # link-preview image, in /images/
 
 # Author (used by the homepage hero, footer and SEO tags)
 author:
   name                   : "Jiapeng Zhang"
-  avatar                 : "photo.png"
+  name_zh                : "张嘉鹏"
+  avatar                 : "avatar.webp"
   bio                    : "Ph.D. student @ Tsinghua University. 3D characters, rigging & animation."
   location               : "Beijing, China"
   employer               : "Tsinghua University"
@@ -34,13 +36,9 @@ exclude:
   - node_modules
   - Gemfile
   - Gemfile.lock
-  - package.json
   - LICENSE
   - README.md
   - run.sh
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
 encoding: "utf-8"
 
 # Conversion

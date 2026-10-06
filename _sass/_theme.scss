@@ -1,6 +1,7 @@
 /* ==========================================================================
    SITE THEME
-   Layered on top of the Minimal Mistakes base styles. Colors are CSS custom
+   Layered on top of the Minimal Mistakes base styles. Body text uses the
+   self-hosted Inter variable font; code uses the system monospace font. Colors are CSS custom
    properties so the light/dark toggle (data-theme on <html>) can swap them.
    ========================================================================== */
 
@@ -12,16 +13,8 @@
   src: url("../fonts/inter-var.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("../fonts/jetbrains-mono-var.woff2") format("woff2");
-}
-
 $font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-$font-code: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+$font-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 $content-width: 1040px;
 $radius: 14px;
 
@@ -481,6 +474,18 @@ samp {
     font-weight: 800;
     letter-spacing: -0.035em;
     line-height: 1.05;
+  }
+
+  &__name-zh {
+    margin-left: 0.15em;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 0.5em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    vertical-align: 0.2em;
+    white-space: nowrap;
   }
 
   &__tagline {
