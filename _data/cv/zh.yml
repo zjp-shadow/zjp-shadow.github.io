@@ -1,0 +1,123 @@
+# 中文简历，由 _layouts/cv.html 渲染到 /cv/zh/（PDF：/files/cv/Jiapeng_Zhang_CV_ZH.pdf）。
+# 与 en.yml 保持同步。`**...**` 为 Markdown 加粗；作者列表中的 "Jiapeng Zhang" 会自动加粗。
+name: "张嘉鹏"
+name_alt: "Jiapeng Zhang"
+headline: "清华大学 计算机科学与技术系 博士研究生"
+contact:
+  - { icon: "fas fa-envelope", text: "jiapengzhang@mails.tsinghua.edu.cn", url: "mailto:jiapengzhang@mails.tsinghua.edu.cn" }
+  - { icon: "fas fa-globe", text: "zjp-shadow.github.io", url: "https://zjp-shadow.github.io" }
+  - { icon: "fab fa-github", text: "zjp-shadow", url: "https://github.com/zjp-shadow" }
+  - { icon: "fas fa-graduation-cap", text: "Google Scholar", url: "https://scholar.google.com/citations?user=XkE68gcAAAAJ" }
+
+labels:
+  switch: "English"
+  pdf: "下载 PDF"
+  updated: "更新于"
+  stars: "Stars"
+
+sections:
+  - title: "教育经历"
+    entries:
+      - org: "清华大学"
+        place: "北京"
+        date: "2024.09 – 至今"
+        role: "计算机科学与技术系 · 博士研究生"
+        bullets:
+          - "**GPA：**3.95 &nbsp;·&nbsp; **排名：**27/158"
+          - "**导师：**胡事民 教授（人机交互与媒体集成研究所）"
+          - "**研究方向：**三维生成、动画、图形学仿真与具身智能、AI Infra"
+      - org: "清华大学"
+        place: "北京"
+        date: "2020.09 – 2024.07"
+        role: "致理书院 · 信息与计算科学 · 理学学士"
+        bullets:
+          - "**排名：**21/30"
+
+  - title: "代表性论文"
+    pubs:
+      - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
+        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        venue: "ACM Transactions on Graphics (TOG), 2026"
+        status: "小修后接收"
+        links:
+          - { name: "项目主页", url: "https://zjp-shadow.github.io/works/SkinTokens/" }
+          - { name: "arXiv", url: "https://arxiv.org/abs/2602.04805" }
+          - { name: "代码", url: "https://github.com/VAST-AI-Research/SkinTokens" }
+        desc: "提出 SkinTokens，一种可学习的蒙皮权重离散紧凑表示。将蒙皮建模为序列预测任务，统一的 TokenRig 框架联合生成骨骼与蒙皮，在严格的分布外几何评测上取得显著提升。"
+      - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"
+        authors: "Jiapeng Zhang, Chengfeng Pu, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        venue: "ACM Transactions on Graphics (TOG), SIGGRAPH 2025"
+        links:
+          - { name: "项目主页", url: "https://zjp-shadow.github.io/works/UniRig/" }
+          - { name: "arXiv", url: "https://arxiv.org/abs/2504.12451" }
+          - { name: "代码", url: "https://github.com/VAST-AI-Research/UniRig" }
+        desc: "提出 UniRig，基于大规模自回归模型与全新骨骼树序列化（Skeleton Tree Tokenization）方法的统一自动绑骨框架。在新构建的大规模数据集 Rig-XL 上训练，可高效生成拓扑合法的骨骼，在多种类型模型上大幅超越现有最优方法。"
+      - title: "CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization"
+        authors: "Haoyang Peng, Jiapeng Zhang, Menghao Guo, Yan-Pei Cao, Shi-Min Hu"
+        venue: "ACM Transactions on Graphics (TOG), SIGGRAPH 2024, 43(4): 1–13"
+        links:
+          - { name: "项目主页", url: "https://charactergen.github.io/" }
+          - { name: "arXiv", url: "https://arxiv.org/abs/2402.17214" }
+          - { name: "代码", url: "https://github.com/zjp-shadow/CharacterGen" }
+        desc: "提出从单张图像高效生成姿态规范化三维角色网格的框架：以图像条件多视图扩散模型完成姿态校准，再由基于 Transformer 的稀疏视图重建网络生成几何与纹理鲁棒、可直接用于动画的结果。"
+      - title: "Transferring the Intelligence of VLMs to Robotic Control"
+        authors: "Menghao Guo, Zhehan Mo, Jiajun Wang, Yi Zhang, Kejin Wang, Yixuan Deng, Jiapeng Zhang, Yongming Rao, Shi-Min Hu"
+        venue: "arXiv preprint arXiv:2609.22966, 2026"
+        links:
+          - { name: "项目主页", url: "https://robodawn.top/" }
+          - { name: "arXiv", url: "https://arxiv.org/abs/2609.22966" }
+        desc: "提出 RoboDawn：通过一组符合人类直觉的离散平移、旋转与夹爪指令，让智能体式 VLM 闭环控制机器人，并以少量上下文示例完成接口与任务策略的对齐。无需针对任务的机器人训练，即在 RoboTwin 2.0 C2R 与 RoboDojo 上取得最优成功率，并可迁移到真实 Franka 机械臂。"
+
+  - title: "开源项目"
+    entries:
+      - org: "UniRig & SkinTokens"
+        links:
+          - { name: "UniRig", url: "https://github.com/VAST-AI-Research/UniRig" }
+          - { name: "SkinTokens", url: "https://github.com/VAST-AI-Research/SkinTokens" }
+        stars: "2,200+"
+        role: "项目维护者 & 核心贡献者"
+        bullets:
+          - "维护 UniRig（SIGGRAPH 2025，1.8k+ stars）与 SkinTokens（TOG 2026，450+ stars）的官方开源实现，发布统一的骨骼与蒙皮预训练模型，可为人形角色、虚构生物乃至无机物体等各类网格自动绑骨。"
+          - "发布精选数据集 Rig-XL 与统一的 TokenRig 流程，在单个自回归模型中同时预测骨骼与蒙皮权重，推动自动绑骨在三维社区中的规模化应用。"
+      - org: "CharacterGen"
+        links:
+          - { name: "GitHub", url: "https://github.com/zjp-shadow/CharacterGen" }
+        stars: "830+"
+        role: "项目维护者 & 核心贡献者"
+        bullets:
+          - "设计并维护单图三维角色生成的渲染与推理工具链，通过规范化 A-pose 生成解决姿态歧义问题。"
+          - "开源多视图扩散合成与纹理反投影方案，被大量三维二次元角色创作者使用。"
+      - org: "清华 Jittor（计图）框架"
+        links:
+          - { name: "Jittor", url: "https://github.com/Jittor/Jittor" }
+          - { name: "JittorInfer", url: "https://github.com/Jittor/JittorInfer" }
+        stars: "3,200+"
+        role: "核心成员 & JittorInfer 框架负责人"
+        bullets:
+          - "研发 JittorInfer：面向华为昇腾等国产 AI 硬件的高性能 C++ 大模型推理框架。"
+          - "主导多级算子融合与端到端资源调度等系统级优化，部署 DeepSeek 等前沿模型时吞吐量较 Ascend-vLLM 显著提升。"
+
+  - title: "荣誉奖项"
+    awards:
+      - { name: "华为鲲鹏昇腾开发者大会（KADC）明日之星先锋奖", date: "2026" }
+      - { name: "清华大学博士生综合奖学金", date: "2025" }
+      - { name: "全国青少年信息学奥林匹克竞赛（NOI）银牌", date: "2019" }
+      - { name: "信息学奥林匹克中国国家队选拔赛（CTS）金牌", date: "2019" }
+
+  - title: "实习经历"
+    entries:
+      - org: "腾讯混元"
+        date: "2026"
+        role: "研究实习生 · 视频生成 · 清华大学暑期社会实践"
+        bullets:
+          - "研究视频 VAE 的各项指标对基于 Flow 的视频生成模型性能的影响。"
+      - org: "腾讯"
+        date: "2024"
+        role: "研究实习生"
+        bullets:
+          - "开展三维多模态理解方向的研究。"
+      - org: "华为"
+        date: "2023"
+        role: "软件工程实习生"
+        bullets:
+          - "面向鲲鹏芯片 SME（Scalable Matrix Extension）指令集，实现稀疏矩阵乘法的系统级优化。"

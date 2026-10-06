@@ -1,0 +1,102 @@
+---
+layout: compress
+---
+{% comment %}
+  Bilingual CV. Content lives in _data/cv/<page.cv>.yml; the page sets `cv` (en|zh), `lang`,
+  `alt_url` (the other language) and `pdf`. The same markup prints to A4 (see assets/css/cv.css),
+  which is how the PDFs in files/cv/ are made (scripts/cv-pdf.js).
+{% endcomment %}
+{% include base_path %}
+{% assign cv = site.data.cv[page.cv] %}
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/cv.css">
+  </head>
+
+  <body class="cv-body cv-body--{{ page.cv }}">
+
+    {% include masthead.html %}
+
+    <main class="cv-wrap">
+      <div class="cv-toolbar">
+        <a class="btn-pill" href="{{ base_path }}{{ page.alt_url }}" hreflang="{% if page.cv == 'zh' %}en{% else %}zh-CN{% endif %}"><i class="fas fa-globe" aria-hidden="true"></i><span>{{ cv.labels.switch }}</span></a>
+        <a class="btn-pill btn-pill--primary" href="{{ base_path }}{{ page.pdf }}" download><i class="fas fa-file-pdf" aria-hidden="true"></i><span>{{ cv.labels.pdf }}</span></a>
+      </div>
+
+      <article class="cv-sheet">
+        <header class="cv-head">
+          <h1 class="cv-name">{{ cv.name }} <span class="cv-name__alt" lang="{% if page.cv == 'zh' %}en{% else %}zh-CN{% endif %}">{{ cv.name_alt }}</span></h1>
+          <p class="cv-headline">{{ cv.headline }}</p>
+          <ul class="cv-contact">
+            {% for c in cv.contact %}
+              <li><i class="{{ c.icon }} fa-fw" aria-hidden="true"></i><a href="{{ c.url }}">{{ c.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </header>
+
+        {% for s in cv.sections %}
+        <section class="cv-section">
+          <h2 class="cv-section__title">{{ s.title }}</h2>
+
+          {% for e in s.entries %}
+          <div class="cv-entry">
+            <div class="cv-entry__head">
+              <h3 class="cv-entry__org">
+                {{ e.org }}{% if e.place %}<span class="cv-entry__place">{% if page.cv == 'zh' %} · {% else %}, {% endif %}{{ e.place }}</span>{% endif %}
+                {% if e.links %}<span class="cv-entry__links">{% for l in e.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</span>{% endif %}
+              </h3>
+              {% if e.stars %}<span class="cv-entry__date cv-stars">{{ e.stars }} {{ cv.labels.stars }}</span>{% elsif e.date %}<span class="cv-entry__date">{{ e.date }}</span>{% endif %}
+            </div>
+            {% if e.role %}<p class="cv-entry__role">{{ e.role }}</p>{% endif %}
+            {% if e.bullets %}
+            <ul class="cv-bullets">
+              {% for b in e.bullets %}<li>{{ b | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+
+          {% if s.pubs %}
+          <ol class="cv-pubs">
+            {% for p in s.pubs %}
+            <li class="cv-pub">
+              <h3 class="cv-pub__title">{{ p.title }}</h3>
+              <p class="cv-pub__authors">{{ p.authors | replace: 'Jiapeng Zhang', '<strong>Jiapeng Zhang</strong>' }}</p>
+              <p class="cv-pub__venue">
+                <em>{{ p.venue }}</em>{% if p.status %} <span class="cv-tag">{{ p.status }}</span>{% endif %}
+                <span class="cv-entry__links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</span>
+              </p>
+              <p class="cv-pub__desc">{{ p.desc }}</p>
+            </li>
+            {% endfor %}
+          </ol>
+          {% endif %}
+
+          {% if s.awards %}
+          <ul class="cv-awards">
+            {% for a in s.awards %}
+            <li><span>{{ a.name }}</span><span class="cv-entry__date">{{ a.date }}</span></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </section>
+        {% endfor %}
+
+        <p class="cv-updated">{{ cv.labels.updated }} {{ site.time | date: '%Y.%m' }}</p>
+      </article>
+    </main>
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>

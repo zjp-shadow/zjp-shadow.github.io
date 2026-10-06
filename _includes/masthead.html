@@ -22,6 +22,7 @@
             {% if page.url == link.url %}{% assign active = true %}{% endif %}
             {% if link.url == '/publications/' and page.collection == 'publications' %}{% assign active = true %}{% endif %}
             {% if link.url == '/year-archive/' and page.collection == 'posts' %}{% assign active = true %}{% endif %}
+            {% if link.url == '/cv/' and page.layout == 'cv' %}{% assign active = true %}{% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>

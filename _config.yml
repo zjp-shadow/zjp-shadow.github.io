@@ -39,6 +39,7 @@ exclude:
   - LICENSE
   - README.md
   - run.sh
+  - scripts
 encoding: "utf-8"
 
 # Conversion
