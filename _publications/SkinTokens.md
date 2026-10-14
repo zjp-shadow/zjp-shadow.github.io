@@ -4,13 +4,13 @@ collection: publications
 pub_key: skintokens
 permalink: /publications/skintokens
 date: 2026-02-04
-venue: 'arXiv preprint'
+venue: 'ACM Transactions on Graphics (TOG)'
 paperurl: 'https://arxiv.org/pdf/2602.04805'
 bibtex: |
   @article{zhang2026skintokens,
     title   = {SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging},
     author  = {Zhang, Jia-Peng and Pu, Cheng-Feng and Guo, Meng-Hao and Cao, Yan-Pei and Hu, Shi-Min},
-    journal = {arXiv preprint arXiv:2602.04805},
+    journal = {ACM Transactions on Graphics (TOG)},
     year    = {2026}
   }
 ---
