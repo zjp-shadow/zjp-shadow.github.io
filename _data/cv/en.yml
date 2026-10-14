@@ -38,7 +38,7 @@ sections:
     pubs:
       - title: "SkinTokens: A Learned Compact Representation for Unified Autoregressive Rigging"
         authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
-        venue: "*ACM Transactions on Graphics (TOG)*, 2026, ***Accepted with Minor Revisions***"
+        venue: "*ACM Transactions on Graphics (TOG)*, 2026"
         url: "https://zjp-shadow.github.io/works/SkinTokens/"
         desc: "Introduced *SkinTokens*, a learned discrete representation for skinning weights. By framing skinning as a sequence prediction task, the unified *TokenRig* framework jointly models skeletons and skin deformations, achieving substantial improvements in rigorous out-of-distribution geometry evaluations."
       - title: "One Model to Rig Them All: Diverse Skeleton Rigging with UniRig"

@@ -22,8 +22,8 @@
   page: /publications/skintokens
   teaser: /images/publication/skintokens.webp
   authors: "Jia-Peng Zhang, Cheng-Feng Pu, Meng-Hao Guo, Yan-Pei Cao, Shi-Min Hu"
-  venue: "arXiv preprint, 2026"
-  badge: "arXiv 2026"
+  venue: "ACM Transactions on Graphics (TOG), 2026"
+  badge: "TOG 2026"
   image: /images/publication/skintokens-thumb.webp
   summary: "A discrete, compact representation of skinning weights that turns rigging into token prediction, unifying skeleton and skinning generation in one autoregressive model."
   links:
